@@ -12,3 +12,8 @@ This is the Starter Project, which is intended to be a core learning asset for t
 who have enroled the Design and Testing subject of the Software Engineering curriculum of the 
 University of Sevilla.  This project helps them start working on their new information system 
 projects.
+
+This is Acme Planner, the second project of Group 11 for Design & Testing 2 subject.
+
+GitHub repository: https://github.com/albgueram/Acme-Planner-D02
+GitHub release: 
