@@ -15,11 +15,9 @@ import acme.framework.services.AbstractCreateService;
 @Service
 public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous,Shout> {
 
-	//Internal State
 	@Autowired
 	protected AnonymousShoutRepository repository;
 	
-	//Unimplemented Methods
 	@Override
 	public boolean authorise(final Request<Shout> request) {
 
@@ -45,7 +43,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model,"author","text","info");		
+		request.unbind(entity, model, "author", "text", "info");		
 	}
 
 	@Override
@@ -56,7 +54,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		Shout result;
 		Date moment;
 		
-		moment = new Date(System.currentTimeMillis());
+		moment = new Date(System.currentTimeMillis() - 1);
 		
 		result = new Shout();
 		result.setAuthor("John Doe");
@@ -83,7 +81,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		Date moment;
 		
-		moment = new Date(System.currentTimeMillis()-1);
+		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
 		this.repository.save(entity);
 	}

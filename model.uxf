@@ -299,17 +299,17 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>224</x>
-      <y>63</y>
+      <x>203</x>
+      <y>525</y>
       <w>252</w>
       <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Shout
 --
-+ moment: Date {NotNull,Temporal(TIMESTAMP)}
-+ author: String {NotBlank, Length{5,25}}
-+ text: String{NotBlank, Max-Length{100}}
++ moment: Date {NotNull, Temporal(TIMESTAMP)}
++ author: String {NotBlank, Length(5, 25)}
++ text: String{NotBlank, Length(1, 100)}
 + info: String {URL}
 </panel_attributes>
     <additional_attributes/>
