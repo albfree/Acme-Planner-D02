@@ -32,30 +32,30 @@ public class Task extends DomainEntity {
 	
 	@NotBlank
 	@Length(min = 1, max = 80)
-	String title;
+	protected String title;
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	Date startExecutionPeriod;
+	protected Date startExecutionPeriod;
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	Date endExecutionPeriod;
+	protected Date endExecutionPeriod;
 	
 	@NotNull
 	@Digits(integer = 100, fraction = 2)
-	Double  workload;
+	protected Double  workload;
 	
 	@NotBlank
 	@Length(min = 1, max = 500)
-	String description;
+	protected String description;
 	
 	@NotBlank
 	@Pattern(regexp = "^(public|private)$")
-	String share;
+	protected String share;
 	
 	@URL
-	String link;
+	protected String link;
 	
 	//Derived attributes
 	

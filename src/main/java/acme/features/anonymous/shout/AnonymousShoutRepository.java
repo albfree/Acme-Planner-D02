@@ -15,6 +15,6 @@ public interface AnonymousShoutRepository extends AbstractRepository {
 	@Query("select s from Shout s")
 	Collection<Shout> findMany();
 	
-	@Query("select s from Shout s where datediff(now(), s.moment) < 30")
+	@Query("select s from Shout s where datediff(now(), s.moment) <= 30")
 	Collection<Shout> findWithinAMonth(Sort sort);
 }
