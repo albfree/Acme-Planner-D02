@@ -1,5 +1,5 @@
 /*
- * AnonymousTaskRepository.java
+ * AuthenticatedTaskRepository.java
  *
  * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.task;
+package acme.features.authenticated.task;
 
 import java.util.Collection;
 
@@ -21,10 +21,10 @@ import acme.entities.tasks.Task;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnonymousTaskRepository extends AbstractRepository {
+public interface AuthenticatedTaskRepository extends AbstractRepository {
 
-	@Query("select t from Task t where t.endExecutionPeriod > CURRENT_TIMESTAMP and t.share = 'public'")
-	Collection<Task> findPublicAndNonFinishedTasks();
+	@Query("select t from Task t where t.endExecutionPeriod < CURRENT_TIMESTAMP and t.share = 'public'")
+	Collection<Task> findPublicAndFinishedTasks();
 	
 	@Query("select t from Task t where t.id = ?1")
 	Task findTaskById(int id);

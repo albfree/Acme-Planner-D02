@@ -16,8 +16,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="anonymous.task.list.label.title" path="title" width="25%"/>
-	<acme:list-column code="anonymous.task.list.label.startExecutionPeriod" path="startExecutionPeriod" width="25%"/>
-	<acme:list-column code="anonymous.task.list.label.endExecutionPeriod" path="endExecutionPeriod" width="25%"/>
-	<acme:list-column code="anonymous.task.list.label.workload" path="workload" width="25%"/>
+	<acme:list-column code="authenticated.task.list.label.title" path="title" width="25%"/>
+	<acme:list-column code="authenticated.task.list.label.startExecutionPeriod" path="startExecutionPeriod" width="25%"/>
+	<acme:list-column code="authenticated.task.list.label.endExecutionPeriod" path="endExecutionPeriod" width="25%"/>
+	<acme:list-column code="authenticated.task.list.label.workload" path="workload" width="25%"/>
 </acme:list>
