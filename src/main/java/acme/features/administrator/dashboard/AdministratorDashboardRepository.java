@@ -44,16 +44,16 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(t) from Task t")
 	Double maximumTaskExecutionPeriod();
 	
-	@Query("select count(t) from Task t")
+	@Query("select avg(t.workload) from Task t")
 	Double averageTaskWorkloads();
 
 	@Query("select count(t) from Task t")
 	Double deviationTaskWorkloads();
 
-	@Query("select count(t) from Task t")
+	@Query("select min(t.workload) from Task t")
 	Double minimumTaskWorkload();
 	
-	@Query("select count(t) from Task t")
+	@Query("select max(t.workload) from Task t")
 	Double maximumTaskWorkload();
 
 }
