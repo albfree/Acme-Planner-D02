@@ -1,5 +1,5 @@
 /*
- * AnonymousTaskListService.java
+ * AuthenticatedTaskListService.java
  *
  * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.task;
+package acme.features.authenticated.task;
 
 import java.util.Collection;
 
@@ -20,14 +20,14 @@ import org.springframework.stereotype.Service;
 import acme.entities.tasks.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousTaskListService implements AbstractListService<Anonymous, Task> {
+public class AuthenticatedTaskListService implements AbstractListService<Authenticated, Task> {
 
 	@Autowired
-	protected AnonymousTaskRepository repository;
+	protected AuthenticatedTaskRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Task> request) {
@@ -51,7 +51,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 
 		Collection<Task> result;
 
-		result = this.repository.findPublicAndNonFinishedTasks();
+		result = this.repository.findPublicAndFinishedTasks();
 
 		return result;
 	}

@@ -21,6 +21,7 @@
 	<acme:form-moment code="anonymous.task.form.label.endExecutionPeriod" path="endExecutionPeriod"/>
 	<acme:form-double code="anonymous.task.form.label.workload" path="workload"/>
 	<acme:form-textarea code="anonymous.task.form.label.description" path="description"/>
+	<acme:form-textbox code="anonymous.task.form.label.share" path="share"/>
 	<acme:form-url code="anonymous.task.form.label.link" path="link"/>
 	
   	<acme:form-return code="anonymous.task.form.button.return"/>
