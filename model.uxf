@@ -356,7 +356,7 @@ Task
 + description: String {NotBlank, Length(1, 500)}
 + share: String {NotBlank, Pattern(regexp = "^(public|private)$")}
 + link: String {URL}
-+ /maxHours: Long {Transient}</panel_attributes>
++ /maxWorkload: Long {Transient}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -367,7 +367,7 @@ Task
       <w>217</w>
       <h>42</h>
     </coordinates>
-    <panel_attributes>maxHours = Número de horas y minutos entre
+    <panel_attributes>maxWorkload = Número de horas y minutos entre
 las fechas de inicio y final.
 bg=blue</panel_attributes>
     <additional_attributes/>
