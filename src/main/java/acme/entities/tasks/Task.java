@@ -60,9 +60,12 @@ public class Task extends DomainEntity {
 	//Derived attributes
 	
 	@Transient
-	public long maxHours() {
+	public Double maxWorkload() {
 		final long diffMillies = Math.abs(this.endExecutionPeriod.getTime()-this.startExecutionPeriod.getTime());
-		return TimeUnit.HOURS.convert(diffMillies, TimeUnit.MILLISECONDS);
+		final long diffMinutes = TimeUnit.MINUTES.convert(diffMillies, TimeUnit.MILLISECONDS);
+		final long minutes = diffMinutes%60;
+		final long hours = (diffMinutes-minutes)/60;
+		return (hours*1.0)+(minutes*0.01);
 	}
 
 	//Relationships
