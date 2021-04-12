@@ -12,10 +12,13 @@
 
 package acme.features.anonymous.task;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.tasks.Task;
+import acme.entities.tasks.TaskShare;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Anonymous;
@@ -41,8 +44,8 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		Task task;
 
 		taskId = request.getModel().getInteger("id");
-		task = this.repository.findPublicNonFinishedTaskById(taskId);
-		result = task.getShare().equals("public");
+		task = this.repository.findTaskById(taskId);
+		result = task.getShare().equals(TaskShare.PUBLIC) && task.getEndExecutionPeriod().after(new Date());
 
 		return result;
 	}
@@ -53,8 +56,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "startExecutionPeriod", "endExecutionPeriod", "workload");
-		request.unbind(entity, model, "description", "link");
+		request.unbind(entity, model, "title", "startExecutionPeriod", "endExecutionPeriod", "workload", "description", "share", "link");
 	}
 
 	@Override
@@ -65,7 +67,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findPublicNonFinishedTaskById(id);
+		result = this.repository.findTaskById(id);
 
 		return result;
 	}

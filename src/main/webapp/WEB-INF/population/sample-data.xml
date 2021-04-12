@@ -27,7 +27,7 @@
 		<property name="endExecutionPeriod" value="2021/08/16 23:59"/>
 		<property name="workload" value="4.00"/>
 		<property name="description" value="This is the description for Task 01"/>
-		<property name="share" value="public"/>
+		<property name="share" value="PUBLIC"/>
 		<property name="link"><null/></property>
 	</bean>
 	
@@ -37,7 +37,7 @@
 		<property name="endExecutionPeriod" value="2021/08/16 23:59"/>
 		<property name="workload" value="4.00"/>
 		<property name="description" value="This is the description for Task 02"/>
-		<property name="share" value="private"/>
+		<property name="share" value="PRIVATE"/>
 		<property name="link" value="http://www.example.org"/>
 	</bean>
 	
@@ -47,7 +47,7 @@
 		<property name="endExecutionPeriod" value="2021/03/16 23:59"/>
 		<property name="workload" value="4.30"/>
 		<property name="description" value="This is the description for Task 03"/>
-		<property name="share" value="public"/>
+		<property name="share" value="PUBLIC"/>
 		<property name="link" value="http://www.example.org"/>
 	</bean>
 	
@@ -57,7 +57,7 @@
 		<property name="endExecutionPeriod" value="2021/03/16 23:59"/>
 		<property name="workload" value="6.50"/>
 		<property name="description" value="This is the description for Task 04"/>
-		<property name="share" value="private"/>
+		<property name="share" value="PRIVATE"/>
 		<property name="link"><null/></property>
 	</bean>
 	
@@ -67,7 +67,7 @@
 		<property name="endExecutionPeriod" value="2021/09/16 16:30"/>
 		<property name="workload" value="5.20"/>
 		<property name="description" value="This is the description for Task 05"/>
-		<property name="share" value="public"/>
+		<property name="share" value="PUBLIC"/>
 		<property name="link" value="http://www.example.org"/>
 	</bean>
 	

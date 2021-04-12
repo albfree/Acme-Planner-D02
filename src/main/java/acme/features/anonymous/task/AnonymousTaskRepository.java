@@ -23,10 +23,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnonymousTaskRepository extends AbstractRepository {
 
-	@Query("select t from Task t where t.endExecutionPeriod > CURRENT_TIMESTAMP and t.share = 'public'")
-	Collection<Task> findPublicNonFinishedTasks();
+	@Query("select t from Task t where t.endExecutionPeriod > CURRENT_TIMESTAMP and t.share = 'PUBLIC'")
+	Collection<Task> findPublicAndNonFinishedTasks();
 	
-	@Query("select t from Task t where t.endExecutionPeriod > CURRENT_TIMESTAMP and t.share = 'public' and t.id = ?1")
-	Task findPublicNonFinishedTaskById(int id);
+	@Query("select t from Task t where t.id = ?1")
+	Task findTaskById(int id);
 
 }

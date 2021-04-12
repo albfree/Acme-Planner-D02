@@ -56,7 +56,7 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 
 		Collection<Task> result;
 
-		result = this.repository.findPublicNonFinishedTasks();
+		result = this.repository.findPublicAndNonFinishedTasks();
 
 		return result;
 	}
