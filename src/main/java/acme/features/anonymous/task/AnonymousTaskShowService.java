@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.tasks.Task;
+import acme.entities.tasks.TaskShare;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Anonymous;
@@ -44,7 +45,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 
 		taskId = request.getModel().getInteger("id");
 		task = this.repository.findTaskById(taskId);
-		result = task.getShare().equals("public") && task.getEndExecutionPeriod().after(new Date());
+		result = task.getShare().equals(TaskShare.PUBLIC) && task.getEndExecutionPeriod().after(new Date());
 
 		return result;
 	}
