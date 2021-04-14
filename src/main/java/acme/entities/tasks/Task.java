@@ -10,7 +10,6 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -50,9 +49,8 @@ public class Task extends DomainEntity {
 	@Length(min = 1, max = 500)
 	protected String description;
 	
-	@NotBlank
-	@Pattern(regexp = "^(public|private)$")
-	protected String share;
+	@NotNull
+	protected TaskShare share;
 	
 	@URL
 	protected String link;
