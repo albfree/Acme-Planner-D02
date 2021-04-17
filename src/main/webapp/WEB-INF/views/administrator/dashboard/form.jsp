@@ -17,10 +17,10 @@
 
 <acme:form>
 
-	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfPublicTasks" path="totalNumberOfPublicTasks"/>
-	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfPrivateTasks" path="totalNumberOfPrivateTasks"/>
-	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfFinishedTasks" path="totalNumberOfFinishedTasks"/>
-	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfNonFinishedTasks" path="totalNumberOfNonFinishedTasks"/>
+	<acme:form-integer code="administrator.dashboard.form.label.totalNumberOfPublicTasks" path="totalNumberOfPublicTasks"/>
+	<acme:form-integer code="administrator.dashboard.form.label.totalNumberOfPrivateTasks" path="totalNumberOfPrivateTasks"/>
+	<acme:form-integer code="administrator.dashboard.form.label.totalNumberOfFinishedTasks" path="totalNumberOfFinishedTasks"/>
+	<acme:form-integer code="administrator.dashboard.form.label.totalNumberOfNonFinishedTasks" path="totalNumberOfNonFinishedTasks"/>
 	<acme:form-double code="administrator.dashboard.form.label.averageTaskExecutionPeriods" path="averageTaskExecutionPeriods"/>
 	<acme:form-double code="administrator.dashboard.form.label.deviationTaskExecutionPeriods" path="deviationTaskExecutionPeriods"/>
 	<acme:form-double code="administrator.dashboard.form.label.minimumTaskExecutionPeriod" path="minimumTaskExecutionPeriod"/>

@@ -50,16 +50,16 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Dashboard result;
 		result = new Dashboard();
 
-		final Double totalNumberOfPublicTasks = this.repository.totalNumberOfPublicTasks() != null ? this.repository.totalNumberOfPublicTasks() : 0.;
+		final Integer totalNumberOfPublicTasks = this.repository.totalNumberOfPublicTasks() != null ? this.repository.totalNumberOfPublicTasks() : 0;
 		result.setTotalNumberOfPublicTasks(totalNumberOfPublicTasks);
 
-		final Double totalNumberOfPrivateTasks = this.repository.totalNumberOfPrivateTasks() != null ? this.repository.totalNumberOfPrivateTasks() : 0.;
+		final Integer totalNumberOfPrivateTasks = this.repository.totalNumberOfPrivateTasks() != null ? this.repository.totalNumberOfPrivateTasks() : 0;
 		result.setTotalNumberOfPrivateTasks(totalNumberOfPrivateTasks);
 
-		final Double totalNumberOfFinishedTasks = this.repository.totalNumberOfFinishedTasks() != null ? this.repository.totalNumberOfFinishedTasks() : 0.;
+		final Integer totalNumberOfFinishedTasks = this.repository.totalNumberOfFinishedTasks() != null ? this.repository.totalNumberOfFinishedTasks() : 0;
 		result.setTotalNumberOfFinishedTasks(totalNumberOfFinishedTasks);
 		
-		final Double totalNumberOfNonFinishedTasks = this.repository.totalNumberOfNonFinishedTasks() != null ? this.repository.totalNumberOfNonFinishedTasks() : 0.;
+		final Integer totalNumberOfNonFinishedTasks = this.repository.totalNumberOfNonFinishedTasks() != null ? this.repository.totalNumberOfNonFinishedTasks() : 0;
 		result.setTotalNumberOfNonFinishedTasks(totalNumberOfNonFinishedTasks);
 		
 		final Double averageTaskExecutionPeriods = this.repository.averageTaskExecutionPeriods() != null ? this.repository.averageTaskExecutionPeriods() : 0.;

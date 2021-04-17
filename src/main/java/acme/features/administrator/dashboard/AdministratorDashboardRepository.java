@@ -21,16 +21,16 @@ import acme.framework.repositories.AbstractRepository;
 public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select count(t) from Task t where t.share = 'PUBLIC'")
-	Double totalNumberOfPublicTasks();
+	Integer totalNumberOfPublicTasks();
 
 	@Query("select count(t) from Task t where t.share = 'PRIVATE'")
-	Double totalNumberOfPrivateTasks();
+	Integer totalNumberOfPrivateTasks();
 
 	@Query("select count(t) from Task t where t.endExecutionPeriod < CURRENT_TIMESTAMP")
-	Double totalNumberOfFinishedTasks();
+	Integer totalNumberOfFinishedTasks();
 	
 	@Query("select count(t) from Task t where t.endExecutionPeriod > CURRENT_TIMESTAMP")
-	Double totalNumberOfNonFinishedTasks();
+	Integer totalNumberOfNonFinishedTasks();
 	
 	@Query("select avg(datediff(t.endExecutionPeriod, t.startExecutionPeriod)) from Task t")
 	Double averageTaskExecutionPeriods();
