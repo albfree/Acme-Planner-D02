@@ -64,7 +64,7 @@
 		<property name="endExecutionPeriod" value="2021/08/16 23:59"/>
 		<property name="workload" value="4.00"/>
 		<property name="description" value="This is the description for Task 01"/>
-		<property name="share" value="public"/>
+		<property name="share" value="PUBLIC"/>
 		<property name="link"><null/></property>
 	</bean>
 	
@@ -74,7 +74,7 @@
 		<property name="endExecutionPeriod" value="2021/08/16 23:59"/>
 		<property name="workload" value="4.00"/>
 		<property name="description" value="This is the description for Task 02"/>
-		<property name="share" value="private"/>
+		<property name="share" value="PRIVATE"/>
 		<property name="link" value="http://www.example.org"/>
 	</bean>
 	
@@ -84,7 +84,7 @@
 		<property name="endExecutionPeriod" value="2021/03/16 23:59"/>
 		<property name="workload" value="4.30"/>
 		<property name="description" value="This is the description for Task 03"/>
-		<property name="share" value="public"/>
+		<property name="share" value="PUBLIC"/>
 		<property name="link" value="http://www.example.org"/>
 	</bean>
 	
@@ -94,7 +94,7 @@
 		<property name="endExecutionPeriod" value="2021/03/16 23:59"/>
 		<property name="workload" value="6.50"/>
 		<property name="description" value="This is the description for Task 04"/>
-		<property name="share" value="private"/>
+		<property name="share" value="PRIVATE"/>
 		<property name="link"><null/></property>
 	</bean>
 	
@@ -104,8 +104,37 @@
 		<property name="endExecutionPeriod" value="2021/09/16 16:30"/>
 		<property name="workload" value="5.20"/>
 		<property name="description" value="This is the description for Task 05"/>
-		<property name="share" value="public"/>
+		<property name="share" value="PUBLIC"/>
 		<property name="link" value="http://www.example.org"/>
+	</bean>
+	
+	<!-- Managers -->
+	
+	<bean name="manager01UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager" />
+		<property name="password" value="manager" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager" />
+				<property name="surname" value="01" />
+				<property name="email" value="manager@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager01Manager" />
+				<ref bean="manager01Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="manager01Manager" class="acme.framework.entities.Manager">
+		<property name="userAccount" ref="manager01UserAccount" />
+	</bean>
+	
+	<bean name="manager01Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager01UserAccount" />
 	</bean>
 	
 </beans>

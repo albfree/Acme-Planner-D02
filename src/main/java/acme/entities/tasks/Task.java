@@ -10,7 +10,6 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -50,9 +49,8 @@ public class Task extends DomainEntity {
 	@Length(min = 1, max = 500)
 	protected String description;
 	
-	@NotBlank
-	@Pattern(regexp = "^(public|private)$")
-	protected String share;
+	@NotNull
+	protected TaskShare share;
 	
 	@URL
 	protected String link;
@@ -60,9 +58,12 @@ public class Task extends DomainEntity {
 	//Derived attributes
 	
 	@Transient
-	public long maxHours() {
+	public Double maxWorkload() {
 		final long diffMillies = Math.abs(this.endExecutionPeriod.getTime()-this.startExecutionPeriod.getTime());
-		return TimeUnit.HOURS.convert(diffMillies, TimeUnit.MILLISECONDS);
+		final long diffMinutes = TimeUnit.MINUTES.convert(diffMillies, TimeUnit.MILLISECONDS);
+		final long minutes = diffMinutes%60;
+		final long hours = (diffMinutes-minutes)/60;
+		return (hours*1.0)+(minutes*0.01);
 	}
 
 	//Relationships
