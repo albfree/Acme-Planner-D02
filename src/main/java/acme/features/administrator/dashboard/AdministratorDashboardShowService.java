@@ -85,7 +85,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		final Double maximumTaskWorkload = this.repository.maximumTaskWorkload() != null ? this.repository.maximumTaskWorkload() : 0.;
 		result.setMaximumTaskWorkload(maximumTaskWorkload);
-		
 
 		return result;
 	}
