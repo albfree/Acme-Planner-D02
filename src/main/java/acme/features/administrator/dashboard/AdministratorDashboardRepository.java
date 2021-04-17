@@ -26,10 +26,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(t) from Task t where t.share = acme.entities.tasks.TaskShare.PRIVATE")
 	Integer totalNumberOfPrivateTasks();
 
-	@Query("select count(t) from Task t where t.endExecutionPeriod < CURRENT_TIMESTAMP")
+	@Query("select count(t) from Task t where t.endExecutionPeriod < current_timestamp()")
 	Integer totalNumberOfFinishedTasks();
 	
-	@Query("select count(t) from Task t where t.endExecutionPeriod > CURRENT_TIMESTAMP")
+	@Query("select count(t) from Task t where t.endExecutionPeriod > current_timestamp()")
 	Integer totalNumberOfNonFinishedTasks();
 	
 	@Query("select avg(datediff(t.endExecutionPeriod, t.startExecutionPeriod)) from Task t")
