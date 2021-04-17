@@ -11,10 +11,10 @@ public class Dashboard implements Serializable {
 	
 	private static final long	serialVersionUID	= 1L;
 
-	Double						totalNumberOfPublicTasks;
-	Double						totalNumberOfPrivateTasks;
-	Double						totalNumberOfFinishedTasks;
-	Double						totalNumberOfNonFinishedTasks;
+	Integer						totalNumberOfPublicTasks;
+	Integer						totalNumberOfPrivateTasks;
+	Integer						totalNumberOfFinishedTasks;
+	Integer						totalNumberOfNonFinishedTasks;
 	
 	Double						averageTaskExecutionPeriods;
 	Double						deviationTaskExecutionPeriods;
