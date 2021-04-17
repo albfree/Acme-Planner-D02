@@ -20,10 +20,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 
-	@Query("select count(t) from Task t where t.share = 'public'")
+	@Query("select count(t) from Task t where t.share = 'PUBLIC'")
 	Double totalNumberOfPublicTasks();
 
-	@Query("select count(t) from Task t where t.share = 'private'")
+	@Query("select count(t) from Task t where t.share = 'PRIVATE'")
 	Double totalNumberOfPrivateTasks();
 
 	@Query("select count(t) from Task t where t.endExecutionPeriod < CURRENT_TIMESTAMP")
@@ -32,22 +32,22 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(t) from Task t where t.endExecutionPeriod > CURRENT_TIMESTAMP")
 	Double totalNumberOfNonFinishedTasks();
 	
-	@Query("select count(t) from Task t")
+	@Query("select avg(datediff(t.endExecutionPeriod, t.startExecutionPeriod)) from Task t")
 	Double averageTaskExecutionPeriods();
 
-	@Query("select count(t) from Task t")
+	@Query("select stddev(datediff(t.endExecutionPeriod, t.startExecutionPeriod)) from Task t")
 	Double deviationTaskExecutionPeriods();
 
-	@Query("select count(t) from Task t")
+	@Query("select min(datediff(t.endExecutionPeriod, t.startExecutionPeriod)) from Task t")
 	Double minimumTaskExecutionPeriod();
 	
-	@Query("select count(t) from Task t")
+	@Query("select max(datediff(t.endExecutionPeriod, t.startExecutionPeriod)) from Task t")
 	Double maximumTaskExecutionPeriod();
 	
 	@Query("select avg(t.workload) from Task t")
 	Double averageTaskWorkloads();
 
-	@Query("select count(t) from Task t")
+	@Query("select stddev(t.workload) from Task t")
 	Double deviationTaskWorkloads();
 
 	@Query("select min(t.workload) from Task t")
