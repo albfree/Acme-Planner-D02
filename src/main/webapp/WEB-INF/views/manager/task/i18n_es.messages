@@ -15,7 +15,13 @@ manager.task.form.label.workload = Carga de Trabajo:
 manager.task.form.label.description = Descripción:
 manager.task.form.label.share = Visibilidad:
 manager.task.form.label.link = Enlace Opcional:
+manager.task.form.button.create = Crear
 manager.task.form.button.return = Volver
+
+manager.task.form.error.max-workload-exceeded = Máxima carga de trabajo excedida
+manager.task.form.error.start-period-future = El inicio del Periodo de Ejecución debe ser en el futuro
+manager.task.form.error.end-period-future = El fin del Periodo de Ejecución debe ser en el futuro
+manager.task.form.error.period-invalid = El fin del Periodo de Ejecución debe ser después del inicio
  
 manager.task.list.label.title = Título
 manager.task.list.label.startExecutionPeriod = Inicio del Periodo
