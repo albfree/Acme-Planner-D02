@@ -440,10 +440,10 @@ bg=orange</panel_attributes>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Dashboard
 --
-+ totalNumberOfPublicTasks: Double
-+ totalNumberOfPrivateTasks: Double
-+ totalNumberOfFinishedTasks: Double
-+ totalNumberOfNonFinishedTasks: Double
++ totalNumberOfPublicTasks: Integer
++ totalNumberOfPrivateTasks: Integer
++ totalNumberOfFinishedTasks: Integer
++ totalNumberOfNonFinishedTasks: Integer
 + averageTaskExecutionPeriods: Double
 + deviationTaskExecutionPeriods: Double
 + minimumTaskExecutionPeriod: Double
