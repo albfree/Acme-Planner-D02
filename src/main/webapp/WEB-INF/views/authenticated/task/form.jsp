@@ -21,7 +21,10 @@
 	<acme:form-moment code="authenticated.task.form.label.endExecutionPeriod" path="endExecutionPeriod"/>
 	<acme:form-double code="authenticated.task.form.label.workload" path="workload"/>
 	<acme:form-textarea code="authenticated.task.form.label.description" path="description"/>
-	<acme:form-textbox code="authenticated.task.form.label.share" path="share"/>
+	<acme:form-select code="authenticated.task.form.label.share" path="share">
+		<acme:form-option code="PUBLIC" value="PUBLIC" selected="${share == 'PUBLIC'}"/>
+		<acme:form-option code="PRIVATE" value="PRIVATE" selected="${share == 'PRIVATE'}"/>
+	</acme:form-select>
 	<acme:form-url code="authenticated.task.form.label.link" path="link"/>
 	
   	<acme:form-return code="authenticated.task.form.button.return"/>
