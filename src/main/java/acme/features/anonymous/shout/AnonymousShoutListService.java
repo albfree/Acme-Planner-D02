@@ -42,7 +42,7 @@ public class AnonymousShoutListService implements AbstractListService<Anonymous,
 
 		assert request != null;
 		
-		final Collection<Shout> result;
+		Collection<Shout> result;
 		
 		Calendar calendar;
 		Date deadline;
