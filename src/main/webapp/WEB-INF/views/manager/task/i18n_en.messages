@@ -16,6 +16,8 @@ manager.task.form.label.description = Description:
 manager.task.form.label.share = Visibility:
 manager.task.form.label.link = Optional Link:
 manager.task.form.button.create = Create
+manager.task.form.button.update = Update
+manager.task.form.button.delete = Delete
 manager.task.form.button.return = Return
 
 manager.task.form.error.max-workload-exceeded = Max workload exceeded

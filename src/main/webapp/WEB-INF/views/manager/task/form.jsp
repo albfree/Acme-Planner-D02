@@ -15,18 +15,23 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="${readonly}">
+<acme:form>
 	<acme:form-textbox code="manager.task.form.label.title" path="title"/>
 	<acme:form-moment code="manager.task.form.label.startExecutionPeriod" path="startExecutionPeriod"/>
 	<acme:form-moment code="manager.task.form.label.endExecutionPeriod" path="endExecutionPeriod"/>
 	<acme:form-double code="manager.task.form.label.workload" path="workload"/>
 	<acme:form-textarea code="manager.task.form.label.description" path="description"/>
-	<acme:form-textbox code="manager.task.form.label.share" path="share"/>
+	<acme:form-select code="manager.task.form.label.share" path="share">
+		<acme:form-option code="PUBLIC" value="PUBLIC" selected="${share == 'PUBLIC'}"/>
+		<acme:form-option code="PRIVATE" value="PRIVATE" selected="${share == 'PRIVATE'}"/>
+	</acme:form-select>
 	<acme:form-url code="manager.task.form.label.link" path="link"/>
 	
-	<jstl:if test="${!readonly}">
-		<acme:form-submit test="${command == 'create'}" code="manager.task.form.button.create" 
-			action="create"/>
-	</jstl:if>
+	<acme:form-submit test="${command == 'create'}" code="manager.task.form.button.create" 
+		action="create"/>
+	<acme:form-submit test="${command != 'create'}" code="manager.task.form.button.update" 
+		action="update"/>
+	<acme:form-submit test="${command != 'create'}" code="manager.task.form.button.delete" 
+		action="delete"/>
   	<acme:form-return code="manager.task.form.button.return"/>
 </acme:form>

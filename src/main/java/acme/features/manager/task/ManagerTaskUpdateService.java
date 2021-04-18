@@ -1,5 +1,5 @@
 /*
- * ManagerTaskShowService.java
+ * ManagerTaskUpdateService.java
  *
  * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
@@ -12,21 +12,24 @@
 
 package acme.features.manager.task;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.tasks.Task;
+import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Manager;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class ManagerTaskShowService implements AbstractShowService<Manager, Task> {
+public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, Task> {
 
 	@Autowired
 	protected ManagerTaskRepository repository;
-
+	
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
@@ -43,7 +46,16 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		
 		return result;
 	}
+	
+	@Override
+	public void bind(final Request<Task> request, final Task entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 
+		request.bind(entity, errors);
+	}
+	
 	@Override
 	public void unbind(final Request<Task> request, final Task entity, final Model model) {
 		assert request != null;
@@ -52,7 +64,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 
 		request.unbind(entity, model, "title", "startExecutionPeriod", "endExecutionPeriod", "workload", "description", "share", "link");
 	}
-
+	
 	@Override
 	public Task findOne(final Request<Task> request) {
 		assert request != null;
@@ -65,5 +77,31 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 
 		return result;
 	}
-
+	
+	@Override
+	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+		
+		if(!errors.hasErrors("workload")) {
+			final Double workload = entity.getWorkload();
+			final Double maxWorkload = entity.maxWorkload();
+			errors.state(request, workload <= maxWorkload, "workload", "manager.task.form.error.max-workload-exceeded");
+		}
+		
+		if(!errors.hasErrors("startExecutionPeriod") && !errors.hasErrors("endExecutionPeriod")) {
+			final Date startExecutionPeriod = entity.getStartExecutionPeriod();
+			final Date endExecutionPeriod = entity.getEndExecutionPeriod();
+			errors.state(request, endExecutionPeriod.after(startExecutionPeriod), "endExecutionPeriod", "manager.task.form.error.period-invalid");
+		}
+	}
+	
+	@Override
+	public void update(final Request<Task> request, final Task entity) {
+		assert request != null;
+		assert entity != null;
+		
+		this.repository.save(entity);
+	}
 }
