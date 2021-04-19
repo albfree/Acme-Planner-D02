@@ -15,19 +15,108 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form>
+<h2>
+	<acme:message code="administrator.dashboard.form.title.show"/>
+</h2>
 
-	<acme:form-integer code="administrator.dashboard.form.label.totalNumberOfPublicTasks" path="totalNumberOfPublicTasks"/>
-	<acme:form-integer code="administrator.dashboard.form.label.totalNumberOfPrivateTasks" path="totalNumberOfPrivateTasks"/>
-	<acme:form-integer code="administrator.dashboard.form.label.totalNumberOfFinishedTasks" path="totalNumberOfFinishedTasks"/>
-	<acme:form-integer code="administrator.dashboard.form.label.totalNumberOfNonFinishedTasks" path="totalNumberOfNonFinishedTasks"/>
-	<acme:form-double code="administrator.dashboard.form.label.averageTaskExecutionPeriods" path="averageTaskExecutionPeriods"/>
-	<acme:form-double code="administrator.dashboard.form.label.deviationTaskExecutionPeriods" path="deviationTaskExecutionPeriods"/>
-	<acme:form-double code="administrator.dashboard.form.label.minimumTaskExecutionPeriod" path="minimumTaskExecutionPeriod"/>
-	<acme:form-double code="administrator.dashboard.form.label.maximumTaskExecutionPeriod" path="maximumTaskExecutionPeriod"/>
-	<acme:form-double code="administrator.dashboard.form.label.averageTaskWorkloads" path="averageTaskWorkloads"/>
-	<acme:form-double code="administrator.dashboard.form.label.deviationTaskWorkloads" path="deviationTaskWorkloads"/>
-	<acme:form-double code="administrator.dashboard.form.label.minimumTaskWorkload" path="minimumTaskWorkload"/>
-	<acme:form-double code="administrator.dashboard.form.label.maximumTaskWorkload" path="maximumTaskWorkload"/>
-	
-</acme:form> 
+<table class="table table-sm">
+	<caption>
+		<acme:message code="administrator.dashboard.form.title.general-indicators"/>
+	</caption>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.totalNumberOfPublicTasks"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberOfPublicTasks}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.totalNumberOfPrivateTasks"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberOfPrivateTasks}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.totalNumberOfFinishedTasks"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberOfFinishedTasks}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.totalNumberOfNonFinishedTasks"/>
+		</th>
+		<td>
+			<acme:print value="${totalNumberOfNonFinishedTasks}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageTaskExecutionPeriods"/>
+		</th>
+		<td>
+			<acme:print value="${averageTaskExecutionPeriods}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationTaskExecutionPeriods"/>
+		</th>
+		<td>
+			<acme:print value="${deviationTaskExecutionPeriods}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.minimumTaskExecutionPeriod"/>
+		</th>
+		<td>
+			<acme:print value="${minimumTaskExecutionPeriod}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.maximumTaskExecutionPeriod"/>
+		</th>
+		<td>
+			<acme:print value="${maximumTaskExecutionPeriod}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.averageTaskWorkloads"/>
+		</th>
+		<td>
+			<acme:print value="${averageTaskWorkloads}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviationTaskWorkloads"/>
+		</th>
+		<td>
+			<acme:print value="${deviationTaskWorkloads}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.minimumTaskWorkload"/>
+		</th>
+		<td>
+			<acme:print value="${minimumTaskWorkload}"/>
+		</td>
+	</tr>	
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.maximumTaskWorkload"/>
+		</th>
+		<td>
+			<acme:print value="${maximumTaskWorkload}"/>
+		</td>
+	</tr>	
+</table>

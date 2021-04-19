@@ -8,6 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+administrator.dashboard.form.title.show = Panel de indicadores
+administrator.dashboard.form.title.general-indicators = Indicadores generales
+
 administrator.dashboard.form.label.totalNumberOfPublicTasks = Número total de tareas públicas:
 administrator.dashboard.form.label.totalNumberOfPrivateTasks = Número total de tareas privadas:
 administrator.dashboard.form.label.totalNumberOfFinishedTasks = Número total de tareas finalizadas:
