@@ -12,5 +12,5 @@ import acme.framework.repositories.AbstractRepository;
 public interface AdministratorCustomisationRepository extends AbstractRepository{
 
 	@Query("select c from Customisation c")
-	Collection<Customisation> findCustomisations();
+	Collection<Customisation> findAllCustomisations();
 }
