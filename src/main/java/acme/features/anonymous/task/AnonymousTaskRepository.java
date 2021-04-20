@@ -23,7 +23,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AnonymousTaskRepository extends AbstractRepository {
 
-	@Query("select t from Task t where t.endExecutionPeriod > CURRENT_TIMESTAMP and t.share = 'PUBLIC'")
+	@Query("select t from Task t where t.endExecutionPeriod > current_timestamp() and t.share = acme.entities.tasks.TaskShare.PUBLIC")
 	Collection<Task> findPublicAndNonFinishedTasks();
 	
 	@Query("select t from Task t where t.id = ?1")
