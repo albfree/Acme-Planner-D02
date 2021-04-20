@@ -1,5 +1,5 @@
 /*
- * AnnouncementStatus.java
+ * TaskShare.java
  *
  * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
