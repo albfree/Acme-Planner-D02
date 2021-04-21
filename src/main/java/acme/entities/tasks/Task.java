@@ -10,6 +10,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -45,17 +46,19 @@ public class Task extends DomainEntity {
 	protected Date endExecutionPeriod;
 	
 	@NotNull
+	@Min(0)
 	@Digits(integer = 100, fraction = 2)
 	protected Double  workload;
 	
 	@NotBlank
-	@Length(min = 1, max = 500)
+	@Length(min = 1, max = 255)
 	protected String description;
 	
 	@NotNull
 	protected TaskShare share;
 	
 	@URL
+	@Length(max = 255)
 	protected String link;
 	
 	//Derived attributes
