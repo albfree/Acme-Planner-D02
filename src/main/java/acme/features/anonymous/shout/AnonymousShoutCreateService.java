@@ -11,12 +11,16 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractCreateService;
+import acme.utils.SpamChecker;
 
 @Service
 public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous,Shout> {
 
 	@Autowired
 	protected AnonymousShoutRepository repository;
+	
+	@Autowired
+	private SpamChecker spamChecker;
 	
 	@Override
 	public boolean authorise(final Request<Shout> request) {
@@ -71,6 +75,14 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;		
+		
+		if (!errors.hasErrors("text")) {
+			errors.state(request, !this.spamChecker.isSpamText(entity.getText()), "text", "anonymous.shout.error.spam");
+		}
+		
+		if (!errors.hasErrors("author")) {
+			errors.state(request, !this.spamChecker.isSpamText(entity.getAuthor()), "author", "anonymous.shout.error.spam");
+		}
 	}
 
 	@Override

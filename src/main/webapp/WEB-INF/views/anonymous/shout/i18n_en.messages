@@ -18,3 +18,5 @@ anonymous.shout.list.label.moment = Moment
 anonymous.shout.list.label.author = Author
 anonymous.shout.list.label.text = Text
 anonymous.shout.list.label.info = Info
+
+anonymous.shout.error.spam = This text string contains a high percentage of spam words
