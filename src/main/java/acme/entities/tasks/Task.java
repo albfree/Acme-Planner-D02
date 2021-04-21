@@ -4,10 +4,13 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -15,6 +18,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.entities.DomainEntity;
+import acme.framework.entities.Manager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -42,17 +46,19 @@ public class Task extends DomainEntity {
 	protected Date endExecutionPeriod;
 	
 	@NotNull
+	@Min(0)
 	@Digits(integer = 100, fraction = 2)
 	protected Double  workload;
 	
 	@NotBlank
-	@Length(min = 1, max = 500)
+	@Length(min = 1, max = 255)
 	protected String description;
 	
 	@NotNull
 	protected TaskShare share;
 	
 	@URL
+	@Length(max = 255)
 	protected String link;
 	
 	//Derived attributes
@@ -67,5 +73,10 @@ public class Task extends DomainEntity {
 	}
 
 	//Relationships
+	
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Manager manager;
 	
 }
