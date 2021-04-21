@@ -13,7 +13,7 @@ import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AdministratorCustomisationUpdateService implements AbstractUpdateService<Administrator, Customisation>{
+public class AdministratorCustomisationUpdateService implements AbstractUpdateService<Administrator, Customisation> {
 
 	@Autowired
 	private AdministratorCustomisationRepository repository;

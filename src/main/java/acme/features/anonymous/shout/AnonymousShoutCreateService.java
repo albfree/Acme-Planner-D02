@@ -14,7 +14,7 @@ import acme.framework.services.AbstractCreateService;
 import acme.utils.SpamChecker;
 
 @Service
-public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous,Shout> {
+public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous, Shout> {
 
 	@Autowired
 	protected AnonymousShoutRepository repository;
@@ -24,7 +24,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	
 	@Override
 	public boolean authorise(final Request<Shout> request) {
-
 		assert request != null;
 		
 		return true;
@@ -32,7 +31,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 	@Override
 	public void bind(final Request<Shout> request, final Shout entity, final Errors errors) {
-
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -42,7 +40,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 	@Override
 	public void unbind(final Request<Shout> request, final Shout entity, final Model model) {
-		
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -52,7 +49,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 	@Override
 	public Shout instantiate(final Request<Shout> request) {
-
 		assert request != null;
 		
 		Shout result;
@@ -61,10 +57,10 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		moment = new Date(System.currentTimeMillis() - 1);
 		
 		result = new Shout();
-		result.setAuthor("John Doe");
-		result.setText("Lorem ipsum!");
+		result.setAuthor("");
+		result.setText("");
 		result.setMoment(moment);
-		result.setInfo("http://example.org");
+		result.setInfo("");
 		
 		return result;
 	}
@@ -95,6 +91,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
+		
 		this.repository.save(entity);
 	}
 

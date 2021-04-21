@@ -308,9 +308,9 @@ has v</panel_attributes>
 Shout
 --
 + moment: Date {NotNull, Temporal(TIMESTAMP)}
-+ author: String {NotBlank, Length(5, 25)}
-+ text: String{NotBlank, Length(1, 100)}
-+ info: String {URL}
++ author: String {NotBlank, Length(min = 5, max = 25)}
++ text: String{NotBlank, Length(min = 1, max = 100)}
++ info: String {URL, Length(max = 255)}
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -349,11 +349,11 @@ Manager
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Task
 --
-+ title: String {NotBlank, Length(1, 80)}
++ title: String {NotBlank, Length(min = 1, max = 80)}
 + startExecutionPeriod: Date {NotNull, Temporal(TIMESTAMP)}
 + endExecutionPeriod: Date {NotNull, Temporal(TIMESTAMP)}
 + workload: double {NotNull, Digits(integer=100, fraction=2)}
-+ description: String {NotBlank, Length(1, 500)}
++ description: String {NotBlank, Length(min = 1, max = 500)}
 + share: TaskShare {NotNull}
 + link: String {URL}
 + /maxWorkload: Long {Transient}</panel_attributes>
@@ -364,7 +364,7 @@ Task
     <coordinates>
       <x>875</x>
       <y>427</y>
-      <w>217</w>
+      <w>231</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>maxWorkload = Número de horas y minutos entre
@@ -408,7 +408,7 @@ bg=blue</panel_attributes>
 mientras la parte decimal representa los minutos.
  
 Su valor no debe ser mayor que el atributo
-derivado maxHours.
+derivado maxWorkload.
 bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
@@ -452,6 +452,22 @@ Dashboard
 + deviationTaskWorkloads: Double
 + minimumTaskWorkload: Double
 + maximumTaskWorkload: Double
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>469</x>
+      <y>574</y>
+      <w>399</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Customisation
+--
++ spamWords: String {NotBlank, Length(min = 1, max = 255)}
++ threshold: Double {NotNull, Digits(integer = 3, fraction = 2), Range(min = 0, max = 100)}
 </panel_attributes>
     <additional_attributes/>
   </element>

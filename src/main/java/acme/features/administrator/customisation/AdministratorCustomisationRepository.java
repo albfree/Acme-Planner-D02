@@ -9,7 +9,7 @@ import acme.entities.customisations.Customisation;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AdministratorCustomisationRepository extends AbstractRepository{
+public interface AdministratorCustomisationRepository extends AbstractRepository {
 
 	@Query("select c from Customisation c")
 	Collection<Customisation> findAllCustomisations();

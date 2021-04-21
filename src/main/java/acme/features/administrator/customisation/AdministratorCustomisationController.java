@@ -13,7 +13,7 @@ import acme.framework.entities.Administrator;
 
 @Controller
 @RequestMapping("/administrator/customisation")
-public class AdministratorCustomisationController extends AbstractController<Administrator, Customisation>{
+public class AdministratorCustomisationController extends AbstractController<Administrator, Customisation> {
 
 	//Internal state
 	

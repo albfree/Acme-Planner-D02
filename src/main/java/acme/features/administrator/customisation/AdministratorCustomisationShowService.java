@@ -12,7 +12,7 @@ import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorCustomisationShowService implements AbstractShowService<Administrator, Customisation>{
+public class AdministratorCustomisationShowService implements AbstractShowService<Administrator, Customisation> {
 
 	@Autowired
 	private AdministratorCustomisationRepository repository;
