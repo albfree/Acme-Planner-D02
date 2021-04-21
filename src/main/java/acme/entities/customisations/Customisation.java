@@ -4,9 +4,9 @@ import javax.persistence.Entity;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
 
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -25,6 +25,6 @@ public class Customisation extends DomainEntity {
 
 	@NotNull
 	@Digits(integer = 3, fraction = 2)
-	@Positive
+	@Range(min = 0, max = 100)
 	private Double				threshold;
 }
