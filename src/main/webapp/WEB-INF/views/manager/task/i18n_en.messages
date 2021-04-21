@@ -15,19 +15,20 @@ manager.task.form.label.workload = Workload:
 manager.task.form.label.description = Description:
 manager.task.form.label.share = Visibility:
 manager.task.form.label.link = Optional Link:
+
+manager.task.list.label.title = Title
+manager.task.list.label.startExecutionPeriod = Period Starts
+manager.task.list.label.endExecutionPeriod = Period Ends
+manager.task.list.label.workload = Workload
+
 manager.task.form.button.create = Create
 manager.task.form.button.update = Update
 manager.task.form.button.delete = Delete
 manager.task.form.button.return = Return
 
-manager.task.form.error.workload-minutes-exceeded = Max number of minutes exceeded
-manager.task.form.error.max-workload-exceeded = Max workload exceeded
+manager.task.form.error.workload-minutes-exceeded = Maximum number of minutes exceeded
+manager.task.form.error.max-workload-exceeded = Maximum workload exceeded
 manager.task.form.error.start-period-future = The start of Execution Period must be in the future
 manager.task.form.error.end-period-future = The end of Execution Period must be in the future
 manager.task.form.error.period-invalid = The end of Execution Period must be later than the start
-manager.task.form.error.contains-spam = Text contains spam
- 
-manager.task.list.label.title = Title
-manager.task.list.label.startExecutionPeriod = Period Starts
-manager.task.list.label.endExecutionPeriod = Period Ends
-manager.task.list.label.workload = Workload
+manager.task.form.error.contains-spam = This text string contains a high percentage of spam words

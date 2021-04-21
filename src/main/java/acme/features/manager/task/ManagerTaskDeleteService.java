@@ -25,13 +25,8 @@ import acme.framework.services.AbstractDeleteService;
 @Service
 public class ManagerTaskDeleteService implements AbstractDeleteService<Manager, Task> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	protected ManagerTaskRepository repository;
-
-	// AbstractDeleteService<Employer, Job> interface -------------------------
-
 
 	@Override
 	public boolean authorise(final Request<Task> request) {

@@ -20,7 +20,6 @@ import lombok.Setter;
 @Setter
 public class Shout extends DomainEntity {
 
-		
 	// Serialisation identifier 
 	
 	protected static final long serialVersionUID = 1L;

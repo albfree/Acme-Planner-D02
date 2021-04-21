@@ -10,13 +10,13 @@
 
 anonymous.shout.form.label.author = Autor:
 anonymous.shout.form.label.text = Texto:
-anonymous.shout.form.label.info = Info:
+anonymous.shout.form.label.info = Enlace Opcional:
 anonymous.shout.form.button.create = Gritar!
 anonymous.shout.form.button.return = Volver
 
 anonymous.shout.list.label.moment = Momento
 anonymous.shout.list.label.author = Autor
 anonymous.shout.list.label.text = Texto
-anonymous.shout.list.label.info = Información
+anonymous.shout.list.label.info = Enlace Opcional
 
 anonymous.shout.error.spam = Esta cadena de texto contiene un porcentaje alto de palabras spam

@@ -352,10 +352,10 @@ Task
 + title: String {NotBlank, Length(min = 1, max = 80)}
 + startExecutionPeriod: Date {NotNull, Temporal(TIMESTAMP)}
 + endExecutionPeriod: Date {NotNull, Temporal(TIMESTAMP)}
-+ workload: double {NotNull, Digits(integer=100, fraction=2)}
-+ description: String {NotBlank, Length(min = 1, max = 500)}
++ workload: Double {NotNull, Min(0), Digits(integer = 100, fraction = 2)}
++ description: String {NotBlank, Length(min = 1, max = 255)}
 + share: TaskShare {NotNull}
-+ link: String {URL}
++ link: String {URL, Length(max = 255)}
 + /maxWorkload: Long {Transient}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -470,5 +470,19 @@ Customisation
 + threshold: Double {NotNull, Digits(integer = 3, fraction = 2), Range(min = 0, max = 100)}
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>595</x>
+      <y>322</y>
+      <w>84</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+Managed by ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
 </diagram>

@@ -88,29 +88,31 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert entity != null;
 		assert errors != null;
 		
-		if(!errors.hasErrors("workload")) {
+		if (!errors.hasErrors("workload")) {
 			final Double workload = entity.getWorkload();
 			final String workloadString = String.valueOf(workload);
 			final String minutesString = workloadString.substring(workloadString.indexOf(".") + 1);
+			
 			errors.state(request, Integer.parseInt(minutesString) <= 60, "workload", "manager.task.form.error.workload-minutes-exceeded");
 			
-			if(!errors.hasErrors("startExecutionPeriod") && !errors.hasErrors("endExecutionPeriod")) {
+			if (!errors.hasErrors("startExecutionPeriod") && !errors.hasErrors("endExecutionPeriod")) {
 				final Double maxWorkload = entity.maxWorkload();
 				errors.state(request, workload <= maxWorkload, "workload", "manager.task.form.error.max-workload-exceeded");
 			}
 		}
 		
-		if(!errors.hasErrors("startExecutionPeriod") && !errors.hasErrors("endExecutionPeriod")) {
+		if (!errors.hasErrors("startExecutionPeriod") && !errors.hasErrors("endExecutionPeriod")) {
 			final Date startExecutionPeriod = entity.getStartExecutionPeriod();
 			final Date endExecutionPeriod = entity.getEndExecutionPeriod();
 			errors.state(request, endExecutionPeriod.after(startExecutionPeriod), "endExecutionPeriod", "manager.task.form.error.period-invalid");
 		}
 		
-		if(!errors.hasErrors("title")) {
+		if (!errors.hasErrors("title")) {
 			final String title = entity.getTitle();
 			errors.state(request, !this.spamChecker.isSpamText(title), "title", "manager.task.form.error.contains-spam");
 		}
-		if(!errors.hasErrors("description")) {
+		
+		if (!errors.hasErrors("description")) {
 			final String description = entity.getDescription();
 			errors.state(request, !this.spamChecker.isSpamText(description), "description", "manager.task.form.error.contains-spam");
 		}
