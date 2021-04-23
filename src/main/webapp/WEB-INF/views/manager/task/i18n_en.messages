@@ -26,7 +26,7 @@ manager.task.form.button.update = Update
 manager.task.form.button.delete = Delete
 manager.task.form.button.return = Return
 
-manager.task.form.error.workload-minutes-exceeded = Maximum number of minutes exceeded
+manager.task.form.error.workload-minutes-exceeded = Maximum number of minutes exceeded (59)
 manager.task.form.error.max-workload-exceeded = Maximum workload exceeded
 manager.task.form.error.start-period-future = The start of Execution Period must be in the future
 manager.task.form.error.end-period-future = The end of Execution Period must be in the future

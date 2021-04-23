@@ -10,10 +10,11 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.framework.entities;
+package acme.entities.roles;
 
 import javax.persistence.Entity;
 
+import acme.framework.entities.UserRole;
 import lombok.Getter;
 import lombok.Setter;
 

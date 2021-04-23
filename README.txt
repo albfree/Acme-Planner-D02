@@ -17,3 +17,12 @@ This is Acme Planner, the second project of Group 11 for Design & Testing 2 subj
 
 GitHub repository: https://github.com/albgueram/Acme-Planner-D02
 GitHub release: 
+
+
+Interpretaciones:
+
+- Al no concretarse en los requisitos lo contrario, se interpreta que no es necesario incluir @Past para
+el atributo 'moment' de la entidad Shout. Al realizarse la creación de un Shout, siempre
+estará en pasado porque así se ha implementado en el servicio correspondiente. La decisión de no incluir 
+@Past se toma para poder introducir ejemplos de la entidad Shout con fecha de creación posterior a la del entregable, 
+de forma que se simplifica la corrección al profesor al listar Shouts.

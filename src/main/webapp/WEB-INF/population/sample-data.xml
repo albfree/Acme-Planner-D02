@@ -67,8 +67,8 @@
 	
 	<bean id="task01" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 01"/>
-		<property name="startExecutionPeriod" value="2021/08/13 00:00"/>
-		<property name="endExecutionPeriod" value="2021/08/16 23:59"/>
+		<property name="startExecutionPeriod" value="2021/02/13 11:00"/>
+		<property name="endExecutionPeriod" value="2021/03/16 21:30"/>
 		<property name="workload" value="4.00"/>
 		<property name="description" value="This is the description for Task 01"/>
 		<property name="share" value="PUBLIC"/>
@@ -78,8 +78,8 @@
 	
 	<bean id="task02" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 02"/>
-		<property name="startExecutionPeriod" value="2021/08/12 00:00"/>
-		<property name="endExecutionPeriod" value="2021/08/21 23:59"/>
+		<property name="startExecutionPeriod" value="2021/07/12 12:00"/>
+		<property name="endExecutionPeriod" value="2021/08/21 22:00"/>
 		<property name="workload" value="4.00"/>
 		<property name="description" value="This is the description for Task 02"/>
 		<property name="share" value="PRIVATE"/>
@@ -90,7 +90,7 @@
 	<bean id="task03" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 03"/>
 		<property name="startExecutionPeriod" value="2021/03/10 00:00"/>
-		<property name="endExecutionPeriod" value="2021/03/25 23:59"/>
+		<property name="endExecutionPeriod" value="2021/04/09 16:30"/>
 		<property name="workload" value="4.30"/>
 		<property name="description" value="This is the description for Task 03"/>
 		<property name="share" value="PUBLIC"/>
@@ -100,8 +100,8 @@
 	
 	<bean id="task04" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 04"/>
-		<property name="startExecutionPeriod" value="2021/03/11 00:00"/>
-		<property name="endExecutionPeriod" value="2021/03/18 23:59"/>
+		<property name="startExecutionPeriod" value="2021/06/20 00:00"/>
+		<property name="endExecutionPeriod" value="2021/07/18 23:59"/>
 		<property name="workload" value="6.50"/>
 		<property name="description" value="This is the description for Task 04"/>
 		<property name="share" value="PRIVATE"/>
@@ -111,12 +111,41 @@
 	
 	<bean id="task05" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 05"/>
-		<property name="startExecutionPeriod" value="2021/09/04 00:00"/>
-		<property name="endExecutionPeriod" value="2021/09/10 16:30"/>
+		<property name="startExecutionPeriod" value="2021/08/25 00:00"/>
+		<property name="endExecutionPeriod" value="2021/09/10 10:30"/>
 		<property name="workload" value="5.20"/>
 		<property name="description" value="This is the description for Task 05"/>
 		<property name="share" value="PUBLIC"/>
 		<property name="link" value="http://www.example.org"/>
+		<property name="manager" ref="manager01Manager"></property>
+	</bean>
+	
+	<!-- WorkPlans -->
+	
+	<bean id="workPlan01" class="acme.entities.workplans.WorkPlan">
+		<property name="startExecutionPeriod" value="2021/01/01 15:00"/>
+		<property name="endExecutionPeriod" value="2021/04/10 15:00"/>
+		<property name="share" value="PUBLIC"/>
+		<property name="tasks">
+			<list>
+				<ref bean="task01" />
+				<ref bean="task03" />
+			</list>
+		</property>
+		<property name="manager" ref="manager01Manager"></property>
+	</bean>
+	
+	<bean id="workPlan02" class="acme.entities.workplans.WorkPlan">
+		<property name="startExecutionPeriod" value="2021/06/16 00:00"/>
+		<property name="endExecutionPeriod" value="2021/09/25 15:00"/>
+		<property name="share" value="PRIVATE"/>
+		<property name="tasks">
+			<list>
+				<ref bean="task02" />
+				<ref bean="task04" />
+				<ref bean="task05" />
+			</list>
+		</property>
 		<property name="manager" ref="manager01Manager"></property>
 	</bean>
 	
@@ -141,7 +170,7 @@
 		</property>
 	</bean>
 
-	<bean name="manager01Manager" class="acme.framework.entities.Manager">
+	<bean name="manager01Manager" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="manager01UserAccount" />
 	</bean>
 	
@@ -168,7 +197,7 @@
 		</property>
 	</bean>
 
-	<bean name="manager02Manager" class="acme.framework.entities.Manager">
+	<bean name="manager02Manager" class="acme.entities.roles.Manager">
 		<property name="userAccount" ref="manager02UserAccount" />
 	</bean>
 	

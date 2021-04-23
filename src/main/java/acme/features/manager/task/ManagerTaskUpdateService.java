@@ -17,11 +17,11 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Manager;
 import acme.framework.services.AbstractUpdateService;
 import acme.utils.SpamChecker;
 
@@ -93,7 +93,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			final String workloadString = String.valueOf(workload);
 			final String minutesString = workloadString.substring(workloadString.indexOf(".") + 1);
 			
-			errors.state(request, Integer.parseInt(minutesString) <= 60, "workload", "manager.task.form.error.workload-minutes-exceeded");
+			errors.state(request, Integer.parseInt(minutesString) < 60, "workload", "manager.task.form.error.workload-minutes-exceeded");
 			
 			if (!errors.hasErrors("startExecutionPeriod") && !errors.hasErrors("endExecutionPeriod")) {
 				final Double maxWorkload = entity.maxWorkload();

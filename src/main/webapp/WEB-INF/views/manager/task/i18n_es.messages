@@ -26,7 +26,7 @@ manager.task.form.button.update = Actualizar
 manager.task.form.button.delete = Eliminar
 manager.task.form.button.return = Volver
 
-manager.task.form.error.workload-minutes-exceeded = Número máximo de minutos excedido
+manager.task.form.error.workload-minutes-exceeded = Número máximo de minutos excedido (59)
 manager.task.form.error.max-workload-exceeded = Carga de trabajo máxima excedida
 manager.task.form.error.start-period-future = El inicio del Periodo de Ejecución debe estar en el futuro
 manager.task.form.error.end-period-future = El final del Periodo de Ejecución debe estar en el futuro
