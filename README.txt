@@ -26,3 +26,7 @@ el atributo 'moment' de la entidad Shout. Al realizarse la creación de un Shout
 estará en pasado porque así se ha implementado en el servicio correspondiente. La decisión de no incluir 
 @Past se toma para poder introducir ejemplos de la entidad Shout con fecha de creación posterior a la del entregable, 
 de forma que se simplifica la corrección al profesor al listar Shouts.
+
+- Dado que en el nivel C se especifica que un usuario Anonymous no puede listar ni mostrar aquellas tareas que no sean
+públicas y/o hayan terminado su periodo de ejecución, interpretaremos lo mismo a la hora de listar y mostrar las
+tareas de un WorkPlan por parte de un usuario Anonymous.

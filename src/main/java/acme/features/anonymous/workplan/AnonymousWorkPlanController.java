@@ -1,5 +1,5 @@
 /*
- * AnonymousTaskController.java
+ * AnonymousWorkPlanController.java
  *
  * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.task;
+package acme.features.anonymous.workplan;
 
 import javax.annotation.PostConstruct;
 
@@ -18,26 +18,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.components.CustomCommand;
-import acme.entities.tasks.Task;
+import acme.entities.workplans.WorkPlan;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Anonymous;
 
 @Controller
-@RequestMapping("/anonymous/task/")
-public class AnonymousTaskController extends AbstractController<Anonymous, Task> {
+@RequestMapping("/anonymous/work-plan/")
+public class AnonymousWorkPlanController extends AbstractController<Anonymous, WorkPlan> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousTaskListService	listService;
+	protected AnonymousWorkPlanListService	listService;
 	
 	@Autowired
-	protected AnonymousTaskShowService	showService;
-	
-	@Autowired
-	protected AnonymousTaskListWorkPlanService	listByWorkPlanService;
+	protected AnonymousWorkPlanShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -45,7 +41,6 @@ public class AnonymousTaskController extends AbstractController<Anonymous, Task>
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addCustomCommand(CustomCommand.LIST_BY, BasicCommand.LIST, this.listByWorkPlanService);
 	}
 
 }
