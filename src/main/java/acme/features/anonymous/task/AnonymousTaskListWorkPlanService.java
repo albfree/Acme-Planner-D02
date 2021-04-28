@@ -22,6 +22,9 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskShare;
+import acme.entities.workplans.WorkPlan;
+import acme.entities.workplans.WorkPlanShare;
+import acme.features.anonymous.workplan.AnonymousWorkPlanRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Anonymous;
@@ -32,12 +35,23 @@ public class AnonymousTaskListWorkPlanService implements AbstractListService<Ano
 
 	@Autowired
 	protected AnonymousTaskRepository repository;
+	
+	@Autowired
+	protected AnonymousWorkPlanRepository wpRepository;
 
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
+		
+		boolean result;
+		int workplanId;
+		WorkPlan workplan;
 
-		return true;
+		workplanId = request.getModel().getInteger("id");
+		workplan = this.wpRepository.findWorkPlanById(workplanId);
+		result = workplan.getShare().equals(WorkPlanShare.PUBLIC) && workplan.getEndExecutionPeriod().after(new Date());
+
+		return result;
 	}
 
 	@Override
