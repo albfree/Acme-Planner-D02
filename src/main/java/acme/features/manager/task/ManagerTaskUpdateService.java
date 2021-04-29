@@ -91,9 +91,19 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		if (!errors.hasErrors("workload")) {
 			final Double workload = entity.getWorkload();
 			final String workloadString = String.valueOf(workload);
-			final String minutesString = workloadString.substring(workloadString.indexOf(".") + 1);
 			
-			errors.state(request, Integer.parseInt(minutesString) < 60, "workload", "manager.task.form.error.workload-minutes-exceeded");
+			if (workloadString.contains(".")) {
+				String minutesString = workloadString.substring(workloadString.indexOf(".") + 1);
+				
+				if (!minutesString.equals("0")) {
+					
+					if (minutesString.length() < 2) {
+						minutesString = minutesString + "0";
+					}
+					
+					errors.state(request, Integer.parseInt(minutesString) < 60, "workload", "manager.task.form.error.workload-minutes-exceeded");
+				}
+			}
 			
 			if (!errors.hasErrors("startExecutionPeriod") && !errors.hasErrors("endExecutionPeriod")) {
 				final Double maxWorkload = entity.maxWorkload();

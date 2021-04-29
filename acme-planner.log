@@ -1855,3 +1855,17 @@ INFO [acme.framework.utilities.DatabasePopulator] > Persisting task04 = acme.ent
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting task05 = acme.entities.tasks.Task{id=65, version=0}
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting workPlan01 = acme.entities.workplans.WorkPlan{id=66, version=0}
 INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 1292, SQLState: 22001
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] Data truncation: Incorrect datetime value: '678686-09-21 19:00:00' for column 'end_execution_period' at row 1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:280): could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52): could not execute statement
+com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104): Data truncation: Incorrect datetime value: '678686-09-21 19:00:00' for column 'end_execution_period' at row 1
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 1292, SQLState: 22001
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] Data truncation: Incorrect datetime value: '202145646-09-21 19:00:00' for column 'end_execution_period' at row 1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP POST /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:280): could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52): could not execute statement
+com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104): Data truncation: Incorrect datetime value: '202145646-09-21 19:00:00' for column 'end_execution_period' at row 1
