@@ -47,7 +47,7 @@ public class WorkPlan extends DomainEntity {
 	//Derived attributes
 
 	@Transient
-	public Double totalWorkload() {
+	public Double getTotalWorkload() {
 
 		return this.tasks.stream().map(Task::getWorkload).reduce(0., Double::sum);
 	}

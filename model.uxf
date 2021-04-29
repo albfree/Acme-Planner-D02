@@ -369,6 +369,7 @@ Task
     </coordinates>
     <panel_attributes>maxWorkload = Número de horas y minutos entre
 las fechas de inicio y final.
+
 bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
@@ -409,6 +410,7 @@ mientras la parte decimal representa los minutos.
  
 Su valor no debe ser mayor que el atributo
 derivado maxWorkload.
+
 bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
@@ -536,12 +538,13 @@ Has &gt;</panel_attributes>
       <x>35</x>
       <y>581</y>
       <w>182</w>
-      <h>49</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>El atributo derivado totalWorkload 
 representa la suma de los Workloads 
 de todas las tareas que están dentro 
 de un WorkPlan.
+
 bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
@@ -556,5 +559,63 @@ bg=blue</panel_attributes>
     <panel_attributes>lt=..
 </panel_attributes>
     <additional_attributes>50.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>231</x>
+      <y>336</y>
+      <w>154</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+WorkPlanShare
+--
++ PUBLIC
++ PRIVATE
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1036</x>
+      <y>714</y>
+      <w>133</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Module&gt;&gt;
+SpamChecker
+--
+
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1162</x>
+      <y>742</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1211</x>
+      <y>728</y>
+      <w>154</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Servicio reutilizable destinado
+a la detección de spam en una
+cadena de texto.
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
