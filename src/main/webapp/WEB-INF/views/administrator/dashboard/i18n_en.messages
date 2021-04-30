@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 administrator.dashboard.form.title.show = Dashboard
+administrator.dashboard.form.title.chart = Work plan chart
 administrator.dashboard.form.title.general-indicators = General indicators
 
 administrator.dashboard.form.label.totalNumberOfPublicTasks = Total number of public tasks:
@@ -23,3 +24,16 @@ administrator.dashboard.form.label.averageTaskWorkloads = Average task workloads
 administrator.dashboard.form.label.deviationTaskWorkloads = Deviation task workloads:
 administrator.dashboard.form.label.minimumTaskWorkload = Minimum task workload:
 administrator.dashboard.form.label.maximumTaskWorkload = Maximum task workload:
+
+administrator.dashboard.form.label.totalNumberOfPublicWorkPlans = Total number of public work plans:
+administrator.dashboard.form.label.totalNumberOfPrivateWorkPlans = Total number of private work plans:
+administrator.dashboard.form.label.totalNumberOfFinishedWorkPlans = Total number of finished work plans:
+administrator.dashboard.form.label.totalNumberOfNonFinishedWorkPlans = Total number of non-finished work plans:
+administrator.dashboard.form.label.averageWorkPlanExecutionPeriods = Average of work plan execution periods:
+administrator.dashboard.form.label.deviationWorkPlanExecutionPeriods = Deviation of work plan execution periods:
+administrator.dashboard.form.label.minimumWorkPlanExecutionPeriod = Minimum work plan execution period:
+administrator.dashboard.form.label.maximumWorkPlanExecutionPeriod = Maximum work plan execution period:
+administrator.dashboard.form.label.averageWorkPlanTotalWorkloads = Average work plan total workloads:
+administrator.dashboard.form.label.deviationWorkPlanTotalWorkloads = Deviation work plan total workloads:
+administrator.dashboard.form.label.minimumWorkPlanTotalWorkload = Minimum work plan total workload:
+administrator.dashboard.form.label.maximumWorkPlanTotalWorkload = Maximum work plan total workload:

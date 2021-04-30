@@ -20,6 +20,8 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 
+	//Queries Task
+	
 	@Query("select count(t) from Task t where t.share = acme.entities.tasks.TaskShare.PUBLIC")
 	Integer totalNumberOfPublicTasks();
 
@@ -55,5 +57,43 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	@Query("select max(t.workload) from Task t")
 	Double maximumTaskWorkload();
+	
+	//Queries WorkPlan
 
+	@Query("select count(wp) from WorkPlan wp where wp.share = acme.entities.workplans.WorkPlanShare.PUBLIC")
+	Integer totalNumberOfPublicWorkPlans();
+	
+	@Query("select count(wp) from WorkPlan wp where wp.share = acme.entities.workplans.WorkPlanShare.PRIVATE")
+	Integer totalNumberOfPrivateWorkPlans();
+	
+	@Query("select count(wp) from WorkPlan wp where wp.endExecutionPeriod < current_timestamp()")
+	Integer totalNumberOfFinishedWorkPlans();
+	
+	@Query("select count(wp) from WorkPlan wp where wp.endExecutionPeriod > current_timestamp()")
+	Integer totalNumberOfNonFinishedWorkPlans();
+	
+	@Query("select avg(datediff(wp.endExecutionPeriod, wp.startExecutionPeriod)) from WorkPlan wp")
+	Double averageWorkPlanExecutionPeriods();
+	
+	@Query("select stddev(datediff(wp.endExecutionPeriod, wp.startExecutionPeriod)) from WorkPlan wp")
+	Double deviationWorkPlanExecutionPeriods();
+	
+	@Query("select min(datediff(wp.endExecutionPeriod, wp.startExecutionPeriod)) from WorkPlan wp")
+	Double minimumWorkPlanExecutionPeriod();
+
+	@Query("select max(datediff(wp.endExecutionPeriod, wp.startExecutionPeriod)) from WorkPlan wp")
+	Double maximumWorkPlanExecutionPeriod();
+	
+	@Query("select avg (select sum (t.workload) from WorkPlan wp join wp.tasks t where wp = wp1) from WorkPlan wp1")
+	Double averageWorkPlanTotalWorkloads();
+
+//	@Query("select stddev (select sum (t.workload) from WorkPlan wp join wp.tasks t where wp = wp1) from WorkPlan wp1")
+//	Double deviationWorkPlanTotalWorkloads();
+
+	@Query("select min (select sum (t.workload) from WorkPlan wp join wp.tasks t where wp = wp1) from WorkPlan wp1")
+	Double minimumWorkPlanTotalWorkload();
+	
+	@Query("select max (select sum (t.workload) from WorkPlan wp join wp.tasks t where wp = wp1) from WorkPlan wp1")
+	Double maximumWorkPlanTotalWorkload();
+	
 }

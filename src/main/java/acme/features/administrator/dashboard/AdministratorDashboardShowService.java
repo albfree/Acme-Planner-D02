@@ -40,7 +40,13 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "totalNumberOfPublicTasks", "totalNumberOfPrivateTasks", "totalNumberOfFinishedTasks", "totalNumberOfNonFinishedTasks", "averageTaskExecutionPeriods", "deviationTaskExecutionPeriods", "minimumTaskExecutionPeriod", "maximumTaskExecutionPeriod", "averageTaskWorkloads", "deviationTaskWorkloads", "minimumTaskWorkload", "maximumTaskWorkload");
+		request.unbind(entity, model, "totalNumberOfPublicTasks", "totalNumberOfPrivateTasks", "totalNumberOfFinishedTasks",
+			"totalNumberOfNonFinishedTasks", "averageTaskExecutionPeriods", "deviationTaskExecutionPeriods", "minimumTaskExecutionPeriod",
+			"maximumTaskExecutionPeriod", "averageTaskWorkloads", "deviationTaskWorkloads", "minimumTaskWorkload", "maximumTaskWorkload",
+			"totalNumberOfPublicWorkPlans", "totalNumberOfPrivateWorkPlans", "totalNumberOfFinishedWorkPlans",
+			"totalNumberOfNonFinishedWorkPlans", "averageWorkPlanExecutionPeriods", "deviationWorkPlanExecutionPeriods", "minimumWorkPlanExecutionPeriod",
+			"maximumWorkPlanExecutionPeriod", "averageWorkPlanTotalWorkloads", "deviationWorkPlanTotalWorkloads", "minimumWorkPlanTotalWorkload",
+			"maximumWorkPlanTotalWorkload");
 	}
 
 	@Override
@@ -50,6 +56,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Dashboard result;
 		result = new Dashboard();
 
+		//Metodos de Task
+		
 		final Integer totalNumberOfPublicTasks = this.repository.totalNumberOfPublicTasks() != null ? this.repository.totalNumberOfPublicTasks() : 0;
 		result.setTotalNumberOfPublicTasks(totalNumberOfPublicTasks);
 
@@ -86,6 +94,44 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double maximumTaskWorkload = this.repository.maximumTaskWorkload() != null ? this.repository.maximumTaskWorkload() : 0.;
 		result.setMaximumTaskWorkload(maximumTaskWorkload);
 
+		//Metodos de WorkPlan
+		
+		final Integer totalNumberOfPublicWorkPlans = this.repository.totalNumberOfPublicWorkPlans() != null ? this.repository.totalNumberOfPublicWorkPlans() : 0;
+		result.setTotalNumberOfPublicWorkPlans(totalNumberOfPublicWorkPlans);
+		
+		final Integer totalNumberOfPrivateWorkPlans = this.repository.totalNumberOfPrivateWorkPlans() != null ? this.repository.totalNumberOfPrivateWorkPlans() : 0;
+		result.setTotalNumberOfPrivateWorkPlans(totalNumberOfPrivateWorkPlans);
+
+		final Integer totalNumberOfFinishedWorkPlans = this.repository.totalNumberOfFinishedWorkPlans() != null ? this.repository.totalNumberOfFinishedWorkPlans() : 0;
+		result.setTotalNumberOfFinishedWorkPlans(totalNumberOfFinishedWorkPlans);
+		
+		final Integer totalNumberOfNonFinishedWorkPlans = this.repository.totalNumberOfNonFinishedWorkPlans() != null ? this.repository.totalNumberOfNonFinishedWorkPlans() : 0;
+		result.setTotalNumberOfNonFinishedWorkPlans(totalNumberOfNonFinishedWorkPlans);
+		
+		final Double averageWorkPlanExecutionPeriods = this.repository.averageWorkPlanExecutionPeriods() != null ? this.repository.averageWorkPlanExecutionPeriods() : 0.;
+		result.setAverageWorkPlanExecutionPeriods(averageWorkPlanExecutionPeriods);
+
+		final Double deviationWorkPlanExecutionPeriods = this.repository.deviationWorkPlanExecutionPeriods() != null ? this.repository.deviationWorkPlanExecutionPeriods() : 0.;
+		result.setDeviationWorkPlanExecutionPeriods(deviationWorkPlanExecutionPeriods);
+		
+		final Double minimumWorkPlanExecutionPeriod = this.repository.minimumWorkPlanExecutionPeriod() != null ? this.repository.minimumWorkPlanExecutionPeriod() : 0.;
+		result.setMinimumWorkPlanExecutionPeriod(minimumWorkPlanExecutionPeriod);
+		
+		final Double maximumWorkPlanExecutionPeriod = this.repository.maximumWorkPlanExecutionPeriod() != null ? this.repository.maximumWorkPlanExecutionPeriod() : 0.;
+		result.setMaximumWorkPlanExecutionPeriod(maximumWorkPlanExecutionPeriod);
+		
+		final Double averageWorkPlanTotalWorkloads = this.repository.averageWorkPlanTotalWorkloads() != null ? this.repository.averageWorkPlanTotalWorkloads() : 0.;
+		result.setAverageWorkPlanTotalWorkloads(averageWorkPlanTotalWorkloads);
+
+//		final Double deviationWorkPlanTotalWorkloads = this.repository.deviationWorkPlanTotalWorkloads() != null ? this.repository.deviationWorkPlanTotalWorkloads() : 0.;
+//		result.setDeviationWorkPlanTotalWorkloads(deviationWorkPlanTotalWorkloads);
+
+		final Double minimumWorkPlanTotalWorkload = this.repository.minimumWorkPlanTotalWorkload() != null ? this.repository.minimumWorkPlanTotalWorkload() : 0.;
+		result.setMinimumWorkPlanTotalWorkload(minimumWorkPlanTotalWorkload);
+		
+		final Double maximumWorkPlanTotalWorkload = this.repository.maximumWorkPlanTotalWorkload() != null ? this.repository.maximumWorkPlanTotalWorkload() : 0.;
+		result.setMaximumWorkPlanTotalWorkload(maximumWorkPlanTotalWorkload);
+		
 		return result;
 	}
 
