@@ -20,6 +20,7 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractShowService;
+import acme.utils.StandardDeviation;
 
 @Service
 public class AdministratorDashboardShowService implements AbstractShowService<Administrator, Dashboard> {
@@ -122,10 +123,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		final Double averageWorkPlanTotalWorkloads = this.repository.averageWorkPlanTotalWorkloads() != null ? this.repository.averageWorkPlanTotalWorkloads() : 0.;
 		result.setAverageWorkPlanTotalWorkloads(averageWorkPlanTotalWorkloads);
-
-//		final Double deviationWorkPlanTotalWorkloads = this.repository.deviationWorkPlanTotalWorkloads() != null ? this.repository.deviationWorkPlanTotalWorkloads() : 0.;
-//		result.setDeviationWorkPlanTotalWorkloads(deviationWorkPlanTotalWorkloads);
-
+		
+		final Double deviationWorkPlanTotalWorkloads = this.repository.deviationWorkPlanTotalWorkloads().size() >= 2 ? StandardDeviation.calculateSD(this.repository.deviationWorkPlanTotalWorkloads()) : 0.;
+		result.setDeviationWorkPlanTotalWorkloads(deviationWorkPlanTotalWorkloads);
+		
 		final Double minimumWorkPlanTotalWorkload = this.repository.minimumWorkPlanTotalWorkload() != null ? this.repository.minimumWorkPlanTotalWorkload() : 0.;
 		result.setMinimumWorkPlanTotalWorkload(minimumWorkPlanTotalWorkload);
 		

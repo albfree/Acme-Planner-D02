@@ -12,6 +12,8 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -87,8 +89,8 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select avg (select sum (t.workload) from WorkPlan wp join wp.tasks t where wp = wp1) from WorkPlan wp1")
 	Double averageWorkPlanTotalWorkloads();
 
-//	@Query("select stddev (select sum (t.workload) from WorkPlan wp join wp.tasks t where wp = wp1) from WorkPlan wp1")
-//	Double deviationWorkPlanTotalWorkloads();
+	@Query("select (select sum (t.workload) from WorkPlan wp join wp.tasks t where wp = wp1) from WorkPlan wp1")
+	List<Double> deviationWorkPlanTotalWorkloads();
 
 	@Query("select min (select sum (t.workload) from WorkPlan wp join wp.tasks t where wp = wp1) from WorkPlan wp1")
 	Double minimumWorkPlanTotalWorkload();

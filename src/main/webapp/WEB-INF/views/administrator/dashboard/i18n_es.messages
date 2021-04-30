@@ -10,7 +10,8 @@
 
 administrator.dashboard.form.title.show = Panel de indicadores
 administrator.dashboard.form.title.chart = Gráfica de planes de trabajo
-administrator.dashboard.form.title.general-indicators = Indicadores generales
+administrator.dashboard.form.title.task-indicators = Indicadores de tareas
+administrator.dashboard.form.title.workplan-indicators = Indicadores de planes de trabajo
 
 administrator.dashboard.form.label.totalNumberOfPublicTasks = Número total de tareas públicas:
 administrator.dashboard.form.label.totalNumberOfPrivateTasks = Número total de tareas privadas:

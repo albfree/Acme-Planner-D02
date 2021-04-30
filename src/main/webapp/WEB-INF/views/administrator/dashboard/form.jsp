@@ -19,8 +19,13 @@
 	<acme:message code="administrator.dashboard.form.title.show"/>
 </h2>
 
+<br/>
+	
 <table class="table table-sm">
-		<acme:message code="administrator.dashboard.form.title.general-indicators"/>
+	<caption>
+		<acme:message code="administrator.dashboard.form.title.task-indicators"/>
+	</caption>
+
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.totalNumberOfPublicTasks"/>
@@ -117,6 +122,16 @@
 			<acme:print value="${maximumTaskWorkload}"/>
 		</td>
 	</tr>
+	
+	</table>
+	
+	<br/>
+	
+	<table class="table table-sm">
+	<caption>
+		<acme:message code="administrator.dashboard.form.title.workplan-indicators"/>
+	</caption>
+	
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.totalNumberOfPublicWorkPlans"/>
@@ -215,9 +230,13 @@
 	</tr>
 </table>
 
-<h3>
+<br/>
+
+<h2>
 	<acme:message code="administrator.dashboard.form.title.chart"/>
-</h3>
+</h2>
+
+<br/>
 
 <div>
 	<canvas id="canvas"></canvas>
