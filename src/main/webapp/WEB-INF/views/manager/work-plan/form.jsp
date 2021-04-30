@@ -17,7 +17,10 @@
 
 <acme:form>
 	<jstl:if test="${hasTasks}">
-	<acme:message code="${suggestedMessage}"/>
+	<acme:message code="${suggestedStartDate}"/>
+	<acme:menu-separator/>
+	<acme:message code="${suggestedEndDate}"/>
+	<acme:menu-separator/>
 	</jstl:if>
 	
 	<acme:form-moment code="manager.work-plan.form.label.startExecutionPeriod" path="startExecutionPeriod"/>

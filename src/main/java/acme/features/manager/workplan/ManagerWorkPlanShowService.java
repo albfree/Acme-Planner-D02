@@ -60,27 +60,69 @@ public class ManagerWorkPlanShowService implements AbstractShowService<Manager, 
 		model.setAttribute("hasTasks", !entity.getTasks().isEmpty());
 		
 		if (!entity.getTasks().isEmpty()) {
+			
+			/*
+			 * Sonarlint marca como inadecuado lo siguiente por no
+			 * usar isPresent para asegurar que el valor está, pero
+			 * en este caso no es necesario porque se comprueba previamente
+			 * que la lista está llena de tareas.
+			 */
+			
 			final Date minDate = entity.getTasks().stream().map(task -> task.getStartExecutionPeriod()).min(Date::compareTo).get();
-			final Date maxDate = entity.getTasks().stream().map(task -> task.getStartExecutionPeriod()).max(Date::compareTo).get();
+			final Date maxDate = entity.getTasks().stream().map(task -> task.getEndExecutionPeriod()).max(Date::compareTo).get();
 			
 			final Calendar minCalendar = Calendar.getInstance();
 			minCalendar.setTime(minDate);
-			minCalendar.set(Calendar.DAY_OF_MONTH, -1);
+			minCalendar.add(Calendar.DAY_OF_MONTH, -1);
 			minCalendar.set(Calendar.HOUR_OF_DAY, 8);
-			minCalendar.set(Calendar.MINUTE, 0);
+			
+			final int minMonth = minCalendar.get(Calendar.MONTH) + 1;
+			
+			String stringMinMonth = "";
+			if (minMonth < 10) {
+			    stringMinMonth = "0" + minMonth;
+			} else {
+			    stringMinMonth = String.valueOf(minMonth);
+			}
 			
 			final Calendar maxCalendar = Calendar.getInstance();
 			maxCalendar.setTime(maxDate);
 			maxCalendar.add(Calendar.DAY_OF_MONTH, 1);
 			maxCalendar.set(Calendar.HOUR_OF_DAY, 17);
-			maxCalendar.set(Calendar.MINUTE, 0);
+			
+			final int maxMonth = maxCalendar.get(Calendar.MONTH) + 1;
+			
+			String stringMaxMonth = "";
+			if (maxMonth < 10) {
+			    stringMaxMonth = "0" + maxMonth;
+			} else {
+			    stringMaxMonth = String.valueOf(maxMonth);
+			}
 			
 			if (request.getLocale().equals(Locale.ENGLISH)) {
-				model.setAttribute("suggestedMessage", "Suggested start date: " + minCalendar.getTime().toString() +
-					"/ Suggested finish date: " + maxCalendar.getTime().toString());
+				model.setAttribute("suggestedStartDate", "Suggested start date: " 
+					+ minCalendar.get(Calendar.YEAR) + "/"
+					+ stringMinMonth + "/"
+					+ minCalendar.get(Calendar.DAY_OF_MONTH) + " at "
+					+ minCalendar.get(Calendar.HOUR_OF_DAY));
+				
+				model.setAttribute("suggestedEndDate", "Suggested finish date: " 
+					+ maxCalendar.get(Calendar.YEAR) + "/"
+					+ stringMaxMonth + "/"
+					+ maxCalendar.get(Calendar.DAY_OF_MONTH) + " at "
+					+ maxCalendar.get(Calendar.HOUR_OF_DAY));
 			} else {
-				model.setAttribute("suggestedMessage", "Fecha de inicio recomendada: " + minCalendar.getTime().toString() +
-					"/ Fecha de fin recomendada: " + maxCalendar.getTime().toString());
+				model.setAttribute("suggestedStartDate", "Fecha de inicio recomendada: " 
+					+ minCalendar.get(Calendar.DAY_OF_MONTH) + "/"
+					+ stringMinMonth + "/"
+					+ minCalendar.get(Calendar.YEAR) + " a las "
+					+ minCalendar.get(Calendar.HOUR_OF_DAY));
+				
+				model.setAttribute("suggestedEndDate", "Fecha de fin recomendada: " 
+					+ maxCalendar.get(Calendar.DAY_OF_MONTH) + "/"
+					+ stringMaxMonth + "/"
+					+ maxCalendar.get(Calendar.YEAR) + " a las "
+					+ maxCalendar.get(Calendar.HOUR_OF_DAY));
 			}
 		}
 	}

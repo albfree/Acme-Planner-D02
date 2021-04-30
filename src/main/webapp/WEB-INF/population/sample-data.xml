@@ -79,7 +79,7 @@
 	<bean id="task02" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 02"/>
 		<property name="startExecutionPeriod" value="2021/07/12 12:00"/>
-		<property name="endExecutionPeriod" value="2021/08/21 22:00"/>
+		<property name="endExecutionPeriod" value="2021/08/21 21:00"/>
 		<property name="workload" value="4.00"/>
 		<property name="description" value="This is the description for Task 02"/>
 		<property name="share" value="PRIVATE"/>
@@ -89,7 +89,7 @@
 	
 	<bean id="task03" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 03"/>
-		<property name="startExecutionPeriod" value="2021/03/10 00:00"/>
+		<property name="startExecutionPeriod" value="2021/03/10 10:00"/>
 		<property name="endExecutionPeriod" value="2021/04/09 16:30"/>
 		<property name="workload" value="4.30"/>
 		<property name="description" value="This is the description for Task 03"/>
@@ -100,8 +100,8 @@
 	
 	<bean id="task04" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 04"/>
-		<property name="startExecutionPeriod" value="2021/06/20 00:00"/>
-		<property name="endExecutionPeriod" value="2021/07/18 23:59"/>
+		<property name="startExecutionPeriod" value="2021/06/20 13:00"/>
+		<property name="endExecutionPeriod" value="2021/07/18 19:59"/>
 		<property name="workload" value="6.50"/>
 		<property name="description" value="This is the description for Task 04"/>
 		<property name="share" value="PRIVATE"/>
@@ -111,8 +111,8 @@
 	
 	<bean id="task05" class="acme.entities.tasks.Task">
 		<property name="title" value="Task 05"/>
-		<property name="startExecutionPeriod" value="2021/08/25 00:00"/>
-		<property name="endExecutionPeriod" value="2021/09/10 10:30"/>
+		<property name="startExecutionPeriod" value="2021/08/25 12:00"/>
+		<property name="endExecutionPeriod" value="2021/09/10 17:30"/>
 		<property name="workload" value="5.20"/>
 		<property name="description" value="This is the description for Task 05"/>
 		<property name="share" value="PUBLIC"/>
@@ -136,7 +136,7 @@
 	</bean>
 	
 	<bean id="workPlan02" class="acme.entities.workplans.WorkPlan">
-		<property name="startExecutionPeriod" value="2021/06/16 00:00"/>
+		<property name="startExecutionPeriod" value="2021/06/16 10:00"/>
 		<property name="endExecutionPeriod" value="2021/09/25 15:00"/>
 		<property name="share" value="PRIVATE"/>
 		<property name="tasks">
