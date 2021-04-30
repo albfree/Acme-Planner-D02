@@ -18,6 +18,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.tasks.Task;
+import acme.entities.workplans.WorkPlan;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -31,5 +32,8 @@ public interface AnonymousTaskRepository extends AbstractRepository {
 	
 	@Query("select wp.tasks from WorkPlan wp where wp.id = ?1")
 	Collection<Task> findTasksByWorkPlanId(int id);
+	
+	@Query("select wp from WorkPlan wp where wp.id = ?1")
+	WorkPlan findWorkPlanById(int id);
 
 }

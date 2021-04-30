@@ -37,7 +37,7 @@ public class AnonymousTaskController extends AbstractController<Anonymous, Task>
 	protected AnonymousTaskShowService	showService;
 	
 	@Autowired
-	protected AnonymousTaskListWorkPlanService	listByWorkPlanService;
+	protected AnonymousTaskByWorkPlanListService	listByWorkPlanService;
 
 	// Constructors -----------------------------------------------------------
 

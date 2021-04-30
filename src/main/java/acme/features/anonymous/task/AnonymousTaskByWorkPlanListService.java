@@ -24,20 +24,16 @@ import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskShare;
 import acme.entities.workplans.WorkPlan;
 import acme.entities.workplans.WorkPlanShare;
-import acme.features.anonymous.workplan.AnonymousWorkPlanRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousTaskListWorkPlanService implements AbstractListService<Anonymous, Task> {
+public class AnonymousTaskByWorkPlanListService implements AbstractListService<Anonymous, Task> {
 
 	@Autowired
 	protected AnonymousTaskRepository repository;
-	
-	@Autowired
-	protected AnonymousWorkPlanRepository wpRepository;
 
 	@Override
 	public boolean authorise(final Request<Task> request) {
@@ -48,7 +44,7 @@ public class AnonymousTaskListWorkPlanService implements AbstractListService<Ano
 		WorkPlan workplan;
 
 		workplanId = request.getModel().getInteger("id");
-		workplan = this.wpRepository.findWorkPlanById(workplanId);
+		workplan = this.repository.findWorkPlanById(workplanId);
 		result = workplan.getShare().equals(WorkPlanShare.PUBLIC) && workplan.getEndExecutionPeriod().after(new Date());
 
 		return result;
