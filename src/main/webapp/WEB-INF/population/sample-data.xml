@@ -69,7 +69,7 @@
 		<property name="title" value="Task 01"/>
 		<property name="startExecutionPeriod" value="2021/02/13 11:00"/>
 		<property name="endExecutionPeriod" value="2021/03/16 21:30"/>
-		<property name="workload" value="4.00"/>
+		<property name="workload" value="30.00"/>
 		<property name="description" value="This is the description for Task 01"/>
 		<property name="share" value="PUBLIC"/>
 		<property name="link"><null/></property>
@@ -80,7 +80,7 @@
 		<property name="title" value="Task 02"/>
 		<property name="startExecutionPeriod" value="2021/07/12 12:00"/>
 		<property name="endExecutionPeriod" value="2021/08/21 21:00"/>
-		<property name="workload" value="4.00"/>
+		<property name="workload" value="40.00"/>
 		<property name="description" value="This is the description for Task 02"/>
 		<property name="share" value="PRIVATE"/>
 		<property name="link" value="http://www.example.org"/>
@@ -91,7 +91,7 @@
 		<property name="title" value="Task 03"/>
 		<property name="startExecutionPeriod" value="2021/03/10 10:00"/>
 		<property name="endExecutionPeriod" value="2021/04/09 16:30"/>
-		<property name="workload" value="4.30"/>
+		<property name="workload" value="22.30"/>
 		<property name="description" value="This is the description for Task 03"/>
 		<property name="share" value="PUBLIC"/>
 		<property name="link" value="http://www.example.org"/>
@@ -102,7 +102,7 @@
 		<property name="title" value="Task 04"/>
 		<property name="startExecutionPeriod" value="2021/06/20 13:00"/>
 		<property name="endExecutionPeriod" value="2021/07/18 19:59"/>
-		<property name="workload" value="6.50"/>
+		<property name="workload" value="10.50"/>
 		<property name="description" value="This is the description for Task 04"/>
 		<property name="share" value="PRIVATE"/>
 		<property name="link"><null/></property>
@@ -113,8 +113,30 @@
 		<property name="title" value="Task 05"/>
 		<property name="startExecutionPeriod" value="2021/08/25 12:00"/>
 		<property name="endExecutionPeriod" value="2021/09/10 17:30"/>
-		<property name="workload" value="5.20"/>
+		<property name="workload" value="21.20"/>
 		<property name="description" value="This is the description for Task 05"/>
+		<property name="share" value="PUBLIC"/>
+		<property name="link" value="http://www.example.org"/>
+		<property name="manager" ref="manager01Manager"></property>
+	</bean>
+	
+	<bean id="task06" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 06"/>
+		<property name="startExecutionPeriod" value="2021/06/20 13:00"/>
+		<property name="endExecutionPeriod" value="2021/08/18 19:40"/>
+		<property name="workload" value="30.50"/>
+		<property name="description" value="This is the description for Task 06"/>
+		<property name="share" value="PRIVATE"/>
+		<property name="link"><null/></property>
+		<property name="manager" ref="manager01Manager"></property>
+	</bean>
+	
+	<bean id="task07" class="acme.entities.tasks.Task">
+		<property name="title" value="Task 07"/>
+		<property name="startExecutionPeriod" value="2021/05/06 13:55"/>
+		<property name="endExecutionPeriod" value="2021/06/17 18:35"/>
+		<property name="workload" value="25.20"/>
+		<property name="description" value="This is the description for Task 07"/>
 		<property name="share" value="PUBLIC"/>
 		<property name="link" value="http://www.example.org"/>
 		<property name="manager" ref="manager01Manager"></property>
@@ -144,6 +166,17 @@
 				<ref bean="task02" />
 				<ref bean="task04" />
 				<ref bean="task05" />
+			</list>
+		</property>
+		<property name="manager" ref="manager01Manager"></property>
+	</bean>
+	
+	<bean id="workPlan03" class="acme.entities.workplans.WorkPlan">
+		<property name="startExecutionPeriod" value="2021/03/16 13:00"/>
+		<property name="endExecutionPeriod" value="2021/06/25 16:00"/>
+		<property name="share" value="PRIVATE"/>
+		<property name="tasks">
+			<list>
 			</list>
 		</property>
 		<property name="manager" ref="manager01Manager"></property>
