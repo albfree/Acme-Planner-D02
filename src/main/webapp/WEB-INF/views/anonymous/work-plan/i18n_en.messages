@@ -9,14 +9,14 @@
 # they accept any liabilities with respect to them.
 
 anonymous.workplan.form.label.title = Title:
-anonymous.workplan.form.label.startExecutionPeriod = Start of Execution Period:
-anonymous.workplan.form.label.endExecutionPeriod = End of Execution Period:
-anonymous.workplan.form.label.totalWorkload = Total Workload:
+anonymous.workplan.form.label.startExecutionPeriod = Start of execution period:
+anonymous.workplan.form.label.endExecutionPeriod = End of execution period:
+anonymous.workplan.form.label.totalWorkload = Total workload:
 anonymous.workplan.form.label.share = Visibility:
-anonymous.workplan.form.button.tasks = Tasks
+anonymous.workplan.form.button.tasks = View tasks
 anonymous.workplan.form.button.return = Return
  
 anonymous.workplan.list.label.title = Title
-anonymous.workplan.list.label.startExecutionPeriod = Period Starts
-anonymous.workplan.list.label.endExecutionPeriod = Period Ends
-anonymous.workplan.list.label.totalWorkload = Total Workload
+anonymous.workplan.list.label.startExecutionPeriod = Period starts
+anonymous.workplan.list.label.endExecutionPeriod = Period ends
+anonymous.workplan.list.label.totalWorkload = Total workload

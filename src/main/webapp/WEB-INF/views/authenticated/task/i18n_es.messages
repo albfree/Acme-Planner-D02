@@ -9,15 +9,15 @@
 # they accept any liabilities with respect to them.
 
 authenticated.task.form.label.title = Título:
-authenticated.task.form.label.startExecutionPeriod = Inicio del Periodo de Ejecución:
-authenticated.task.form.label.endExecutionPeriod = Final del Periodo de Ejecución:
-authenticated.task.form.label.workload = Carga de Trabajo:
+authenticated.task.form.label.startExecutionPeriod = Inicio del periodo de ejecución:
+authenticated.task.form.label.endExecutionPeriod = Final del periodo de ejecución:
+authenticated.task.form.label.workload = Carga de trabajo:
 authenticated.task.form.label.description = Descripción:
 authenticated.task.form.label.share = Visibilidad:
-authenticated.task.form.label.link = Enlace Opcional:
+authenticated.task.form.label.link = Enlace opcional:
 authenticated.task.form.button.return = Volver
  
 authenticated.task.list.label.title = Título
-authenticated.task.list.label.startExecutionPeriod = Inicio del Periodo
-authenticated.task.list.label.endExecutionPeriod = Final del Periodo
-authenticated.task.list.label.workload = Carga de Trabajo
+authenticated.task.list.label.startExecutionPeriod = Inicio del periodo
+authenticated.task.list.label.endExecutionPeriod = Final del periodo
+authenticated.task.list.label.workload = Carga de trabajo

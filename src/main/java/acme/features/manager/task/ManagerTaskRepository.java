@@ -40,9 +40,6 @@ public interface ManagerTaskRepository extends AbstractRepository {
 	@Query("select wp.tasks from WorkPlan wp where wp.id = ?1")
 	Collection<Task> findTasksByWorkPlanId(int id);
 	
-	@Query("select t from Task t")
-	Collection<Task> findAllTasks();
-	
 	@Query("select wp from WorkPlan wp")
 	Collection<WorkPlan> findAllWorkPlans();
 	

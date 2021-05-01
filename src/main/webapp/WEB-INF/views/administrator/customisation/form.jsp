@@ -19,6 +19,8 @@
 	<acme:message code="administrator.customisation.form.title.show"/>
 </h3>
 
+<br/>
+
 <acme:form>
 	<acme:form-textarea code="administrator.customisation.form.label.words" path="spamWords"/>
 	<acme:form-double code="administrator.customisation.form.label.threshold" path="threshold"/>

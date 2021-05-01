@@ -23,6 +23,10 @@ Credenciales de CleverCloud:
 
 Interpretaciones:
 
+- Para la entidad Task se pide 500 caracteres como máximo en el atributo 'description', pero el framework 
+no da la posibilidad a aumentar un campo de texto a 500 caracteres, por tanto, se limita al máximo posible
+que son 255.
+
 - Al no concretarse en los requisitos lo contrario, se interpreta que no es necesario incluir @Past para
 el atributo 'moment' de la entidad Shout. Al realizarse la creación de un Shout, siempre
 estará en pasado porque así se ha implementado en el servicio correspondiente. La decisión de no incluir 

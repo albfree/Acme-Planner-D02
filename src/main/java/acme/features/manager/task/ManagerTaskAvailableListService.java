@@ -52,8 +52,9 @@ public class ManagerTaskAvailableListService implements AbstractListService<Mana
 		Collection<Task> result;
 		WorkPlan workPlan;
 		final int wpID = request.getModel().getInteger("id");
+		final int managerId = request.getPrincipal().getActiveRoleId();
 
-		result = this.repository.findAllTasks();
+		result = this.repository.findManyTasksByManager(managerId);
 		
 		workPlan = this.repository.findWorkPlanById(wpID);
 		

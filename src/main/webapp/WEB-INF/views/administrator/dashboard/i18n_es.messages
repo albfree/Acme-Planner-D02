@@ -19,12 +19,12 @@ administrator.dashboard.form.label.totalNumberOfFinishedTasks = Número total de
 administrator.dashboard.form.label.totalNumberOfNonFinishedTasks = Número total de tareas no finalizadas:
 administrator.dashboard.form.label.averageTaskExecutionPeriods = Media de los periodos de ejecución de tareas:
 administrator.dashboard.form.label.deviationTaskExecutionPeriods = Desviación de los periodos de ejecución de tareas:
-administrator.dashboard.form.label.minimumTaskExecutionPeriod = Periodo de ejecución de tareas mínimo:
-administrator.dashboard.form.label.maximumTaskExecutionPeriod = Periodo de ejecución de tareas máximo:
+administrator.dashboard.form.label.minimumTaskExecutionPeriod = Periodo de ejecución mínimo de tareas:
+administrator.dashboard.form.label.maximumTaskExecutionPeriod = Periodo de ejecución máximo de tareas:
 administrator.dashboard.form.label.averageTaskWorkloads = Media de las cargas de trabajo de tareas:
 administrator.dashboard.form.label.deviationTaskWorkloads = Desviación de las cargas de trabajo de tareas:
-administrator.dashboard.form.label.minimumTaskWorkload = Carga de trabajo de tareas mínima:
-administrator.dashboard.form.label.maximumTaskWorkload = Carga de trabajo de tareas máxima:
+administrator.dashboard.form.label.minimumTaskWorkload = Carga de trabajo mínima de tareas:
+administrator.dashboard.form.label.maximumTaskWorkload = Carga de trabajo máxima de tareas:
 
 administrator.dashboard.form.label.totalNumberOfPublicWorkPlans = Número total de planes de trabajo públicos:
 administrator.dashboard.form.label.totalNumberOfPrivateWorkPlans = Número total de planes de trabajo privados:

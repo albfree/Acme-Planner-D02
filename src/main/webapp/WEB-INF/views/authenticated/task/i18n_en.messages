@@ -9,15 +9,15 @@
 # they accept any liabilities with respect to them.
 
 authenticated.task.form.label.title = Title:
-authenticated.task.form.label.startExecutionPeriod = Start of Execution Period:
-authenticated.task.form.label.endExecutionPeriod = End of Execution Period:
+authenticated.task.form.label.startExecutionPeriod = Start of execution period:
+authenticated.task.form.label.endExecutionPeriod = End of execution period:
 authenticated.task.form.label.workload = Workload:
 authenticated.task.form.label.description = Description:
 authenticated.task.form.label.share = Visibility:
-authenticated.task.form.label.link = Optional Link:
+authenticated.task.form.label.link = Optional link:
 authenticated.task.form.button.return = Return
  
 authenticated.task.list.label.title = Title
-authenticated.task.list.label.startExecutionPeriod = Period Starts
-authenticated.task.list.label.endExecutionPeriod = Period Ends
+authenticated.task.list.label.startExecutionPeriod = Period starts
+authenticated.task.list.label.endExecutionPeriod = Period ends
 authenticated.task.list.label.workload = Workload
