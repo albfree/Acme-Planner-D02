@@ -37,3 +37,4 @@ manager.work-plan.form.error.task.private.invalid = No puede añadir una tarea p
 manager.work-plan.form.error.task.contains.invalid = Esta tarea ya pertenece al plan de trabajo
 manager.work-plan.form.error.task.not.contains.invalid = Esta tarea no pertenece al plan de trabajo
 manager.work-plan.form.error.task.period.invalid = El Periodo de Ejecución de la tarea no se ajusta al del plan de trabajo
+manager.work-plan.form.error.contains-spam = Esta cadena de texto contiene un porcentaje alto de palabras spam

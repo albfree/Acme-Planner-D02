@@ -38,11 +38,11 @@
 	</jstl:if>
 	
 	<jstl:if test="${command != 'create'}">
-	<acme:form-integer code="manager.work-plan.form.label.task.add" path="addTaskId"/>
+	<acme:form-integer code="manager.work-plan.form.label.task.add" placeholder="90" path="addTaskId"/>
 	</jstl:if>
 	
 	<jstl:if test="${command != 'create'}">
-	<acme:form-integer code="manager.work-plan.form.label.task.delete" path="deleteTaskId"/>
+	<acme:form-integer code="manager.work-plan.form.label.task.delete" placeholder="90" path="deleteTaskId"/>
 	</jstl:if>
 	
 	<acme:form-submit test="${command == 'show'}" method="get" code="manager.work-plan.form.button.task.list" 

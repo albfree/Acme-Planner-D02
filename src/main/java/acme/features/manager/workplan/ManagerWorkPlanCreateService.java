@@ -21,12 +21,16 @@ import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
+import acme.utils.SpamChecker;
 
 @Service
 public class ManagerWorkPlanCreateService implements AbstractCreateService<Manager, WorkPlan> {
 
 	@Autowired
 	protected ManagerWorkPlanRepository repository;
+	
+	@Autowired
+	private SpamChecker spamChecker;
 	
 	@Override
 	public boolean authorise(final Request<WorkPlan> request) {
@@ -73,6 +77,11 @@ public class ManagerWorkPlanCreateService implements AbstractCreateService<Manag
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if (!errors.hasErrors("title")) {
+			final String title = entity.getTitle();
+			errors.state(request, !this.spamChecker.isSpamText(title), "title", "manager.work-plan.form.error.contains-spam");
+		}
 		
 		if (!errors.hasErrors("startExecutionPeriod") && !errors.hasErrors("endExecutionPeriod")) {
 			errors.state(request, entity.getEndExecutionPeriod().after(entity.getStartExecutionPeriod()), 

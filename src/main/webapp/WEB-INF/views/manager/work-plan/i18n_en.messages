@@ -37,3 +37,4 @@ manager.work-plan.form.error.task.private.invalid = You cannot add a private tas
 manager.work-plan.form.error.task.contains.invalid = This task already belongs to the work plan
 manager.work-plan.form.error.task.not.contains.invalid = This task does not belong to the work plan
 manager.work-plan.form.error.task.period.invalid = The Execution Period of the task does not conform to that of the work plan
+manager.work-plan.form.error.contains-spam = This text string contains a high percentage of spam words

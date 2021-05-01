@@ -24,12 +24,16 @@ import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractUpdateService;
+import acme.utils.SpamChecker;
 
 @Service
 public class ManagerWorkPlanUpdateService implements AbstractUpdateService<Manager, WorkPlan> {
 
 	@Autowired
 	protected ManagerWorkPlanRepository repository;
+	
+	@Autowired
+	private SpamChecker spamChecker;
 	
 	@Override
 	public boolean authorise(final Request<WorkPlan> request) {
@@ -85,6 +89,11 @@ public class ManagerWorkPlanUpdateService implements AbstractUpdateService<Manag
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if (!errors.hasErrors("title")) {
+			final String title = entity.getTitle();
+			errors.state(request, !this.spamChecker.isSpamText(title), "title", "manager.work-plan.form.error.contains-spam");
+		}
 		
 		if (!errors.hasErrors("share") && entity.getShare().equals(WorkPlanShare.PUBLIC)) {
 			errors.state(request, entity.getTasks().stream().noneMatch(task -> task.getShare().equals(TaskShare.PRIVATE)),
