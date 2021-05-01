@@ -47,7 +47,7 @@ public class WorkPlan extends DomainEntity {
 	//Derived attributes
 
 	@Transient
-	public Double totalWorkload() {
+	public Double getTotalWorkload() {
 		Integer sumaHoras = 0;
 		Integer sumaMinutos = 0;
 		Integer horas;
