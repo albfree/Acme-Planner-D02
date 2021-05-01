@@ -54,8 +54,30 @@ public class WorkPlan extends DomainEntity {
 
 	@Transient
 	public Double getTotalWorkload() {
-
-		return this.tasks.stream().map(Task::getWorkload).reduce(0., Double::sum);
+		Integer sumaHoras = 0;
+		Integer sumaMinutos = 0;
+		Integer horas;
+		Integer minutos;
+		Double decimal;
+		Double res = 0.0;
+		
+		if(!this.tasks.isEmpty()) {
+			for(final Task t : this.tasks) {
+				decimal = t.getWorkload()%1;
+				decimal = Math.round(decimal*100.0)/100.0;
+				minutos = (int) (decimal*100);
+				horas = (int) ((t.getWorkload()-decimal)/1.0);
+				sumaHoras+=horas;
+				sumaMinutos+=minutos;
+			}
+			
+			final Integer minutosFinal = sumaMinutos % 60;
+			final Integer horasFinal = sumaHoras + ((sumaMinutos-minutosFinal)/60);
+			
+			res = (horasFinal*1.0) + (minutosFinal/100.);
+		}
+		
+		return res;
 	}
 	
 	//Relationships

@@ -29,6 +29,10 @@ estará en pasado porque así se ha implementado en el servicio correspondiente.
 @Past se toma para poder introducir ejemplos de la entidad Shout con fecha de creación posterior a la del entregable, 
 de forma que se simplifica la corrección al profesor al listar Shouts.
 
+- Dado que en el nivel C se especifica que un usuario Anonymous no puede listar ni mostrar aquellas tareas que sean
+privadas y/o haya terminado su periodo de ejecución, interpretaremos lo mismo a la hora de listar y mostrar las
+tareas de un WorkPlan por parte de un usuario Anonymous.
+
 - No se dejará eliminar una tarea mientras pertenezca a un WorkPlan, se mostrará un mensaje de información que
 avise al usuario de que debe eliminar primero la tarea de la lista de tareas de los WorkPlans a los que pertenezca.
 
