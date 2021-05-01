@@ -22,6 +22,9 @@ manager.work-plan.form.button.update = Actualizar
 manager.work-plan.form.button.delete = Eliminar
 manager.work-plan.form.button.return = Volver
 
+manager.work-plan.form.button.task.list = Ver tareas
+manager.work-plan.form.button.task.add = Añadir tareas
+
 manager.work-plan.form.error.has-private-tasks = Los planes de trabajo que contienen tareas privadas no se pueden publicar
 manager.work-plan.form.error.period-invalid = El final del Periodo de Ejecución debe ser posterior al inicio
 manager.work-plan.form.error.period-tasks-invalid = El Periodo de Ejecución del plan de trabajo debe ser mayor que el de todas sus tareas

@@ -35,6 +35,14 @@
 	<acme:form-double readonly="true" code="manager.work-plan.form.label.total-workload" path="totalWorkload"/>
 	</jstl:if>
 	
+	<acme:form-submit test="${command != 'create'}" method="get" code="manager.work-plan.form.button.task.list" 
+		action="/manager/task/list_by?id=${wpID}"/>
+		
+	<acme:form-submit test="${command != 'create'}" method="get" code="manager.work-plan.form.button.task.add" 
+		action="/manager/task/list_available?id=${wpID}"/>
+	
+	<acme:menu-separator/>
+	
 	<acme:form-submit test="${command == 'create'}" code="manager.work-plan.form.button.create" 
 		action="create"/>
 	<acme:form-submit test="${command != 'create'}" code="manager.work-plan.form.button.update" 
@@ -42,5 +50,6 @@
 	<acme:form-submit test="${command != 'create'}" code="manager.work-plan.form.button.delete" 
 		action="delete"/>
 		
-  	<acme:form-return code="manager.work-plan.form.button.return"/>
+	<acme:form-return code="manager.work-plan.form.button.return"/>
+	
 </acme:form>

@@ -171,7 +171,8 @@ bg=yellow</panel_attributes>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
 --
-
++ LIST_BY
++ LIST_AVAILABLE
 
 bg=orange</panel_attributes>
     <additional_attributes/>

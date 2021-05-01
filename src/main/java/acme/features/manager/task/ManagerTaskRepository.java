@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
+import acme.entities.workplans.WorkPlan;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -32,5 +33,16 @@ public interface ManagerTaskRepository extends AbstractRepository {
 	
 	@Query("select m from Manager m where m.id = ?1")
 	Manager findManagerById(int id);
+	
+	@Query("select wp from WorkPlan wp where wp.id = ?1")
+	WorkPlan findWorkPlanById(int id);
+	
+	@Query("select wp.tasks from WorkPlan wp where wp.id = ?1")
+	Collection<Task> findTasksByWorkPlanId(int id);
+	
+	// Tareas asignables al workplan actual y si el workplan es publico no traerse tareas privadas
+	
+	@Query("select wp.tasks from WorkPlan wp where wp.id <> ?1")
+	Collection<Task> findAvailableTasksByWorkPlanId(int id);
 
 }
