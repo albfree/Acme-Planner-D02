@@ -28,10 +28,10 @@
 	<acme:form-url code="manager.task.form.label.link" path="link"/>
 	
 	<acme:form-submit test="${command == 'create'}" code="manager.task.form.button.create" 
-		action="create"/>
+		action="/manager/task/create"/>
 	<acme:form-submit test="${command != 'create'}" code="manager.task.form.button.update" 
-		action="update"/>
+		action="/manager/task/update"/>
 	<acme:form-submit test="${command != 'create'}" code="manager.task.form.button.delete" 
-		action="delete"/>
+		action="/manager/task/delete"/>
   	<acme:form-return code="manager.task.form.button.return"/>
 </acme:form>

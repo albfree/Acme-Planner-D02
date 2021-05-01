@@ -32,3 +32,5 @@ manager.task.form.error.start-period-future = The start of Execution Period must
 manager.task.form.error.end-period-future = The end of Execution Period must be in the future
 manager.task.form.error.period-invalid = The end of Execution Period must be later than the start
 manager.task.form.error.contains-spam = This text string contains a high percentage of spam words
+manager.task.form.error.task.in.workplan = To delete a task you must unlink it from the work plans to which it belongs
+manager.task.form.error.task.in.public.workplan = A task that belongs to a public work plan cannot be set as private

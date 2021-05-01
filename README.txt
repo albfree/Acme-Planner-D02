@@ -18,6 +18,8 @@ This is Acme Planner, the second project of Group 11 for Design & Testing 2 subj
 GitHub repository: https://github.com/albgueram/Acme-Planner-D02
 GitHub release: 
 
+Credenciales de CleverCloud: 
+
 
 Interpretaciones:
 
@@ -26,3 +28,9 @@ el atributo 'moment' de la entidad Shout. Al realizarse la creación de un Shout
 estará en pasado porque así se ha implementado en el servicio correspondiente. La decisión de no incluir 
 @Past se toma para poder introducir ejemplos de la entidad Shout con fecha de creación posterior a la del entregable, 
 de forma que se simplifica la corrección al profesor al listar Shouts.
+
+- No se dejará eliminar una tarea mientras pertenezca a un WorkPlan, se mostrará un mensaje de información que
+avise al usuario de que debe eliminar primero la tarea de la lista de tareas de los WorkPlans a los que pertenezca.
+
+- Aunque no se solicita en los requisitos, se añade un atributo título a la entidad WorkPlan para facilitar la
+identificación al listar y mostrar.

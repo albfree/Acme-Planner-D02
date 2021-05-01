@@ -11,10 +11,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import org.hibernate.validator.constraints.Length;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
@@ -32,6 +34,10 @@ public class WorkPlan extends DomainEntity {
 	protected static final long		serialVersionUID	= 1L;
 
 	//Attributes
+	
+	@NotBlank
+	@Length(min = 1, max = 80)
+	protected String title;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -47,7 +53,7 @@ public class WorkPlan extends DomainEntity {
 	//Derived attributes
 
 	@Transient
-	public Double totalWorkload() {
+	public Double getTotalWorkload() {
 
 		return this.tasks.stream().map(Task::getWorkload).reduce(0., Double::sum);
 	}

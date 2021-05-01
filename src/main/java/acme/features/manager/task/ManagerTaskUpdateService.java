@@ -12,6 +12,7 @@
 
 package acme.features.manager.task;
 
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
+import acme.entities.tasks.TaskShare;
+import acme.entities.workplans.WorkPlan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -125,6 +128,19 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		if (!errors.hasErrors("description")) {
 			final String description = entity.getDescription();
 			errors.state(request, !this.spamChecker.isSpamText(description), "description", "manager.task.form.error.contains-spam");
+		}
+		
+		if (entity.getShare().equals(TaskShare.PRIVATE)) {
+			final Collection<WorkPlan> workPlans = this.repository.findAllPublicWorkPlans();
+			
+			if (!workPlans.isEmpty()) {
+				for (final WorkPlan wp: workPlans) {
+					if (wp.getTasks().contains(entity)) {
+						errors.state(request, false, "title", "manager.task.form.error.task.in.public.workplan");
+						break;
+					}
+				}
+			}
 		}
 	}
 	

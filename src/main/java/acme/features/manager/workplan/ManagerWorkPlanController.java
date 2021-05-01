@@ -1,5 +1,5 @@
 /*
- * ManagerTaskController.java
+ * ManagerWorkPlanController.java
  *
  * Copyright (C) 2012-2021 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.manager.task;
+package acme.features.manager.workplan;
 
 import javax.annotation.PostConstruct;
 
@@ -18,38 +18,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.components.CustomCommand;
 import acme.entities.roles.Manager;
-import acme.entities.tasks.Task;
+import acme.entities.workplans.WorkPlan;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/manager/task/")
-public class ManagerTaskController extends AbstractController<Manager, Task> {
+@RequestMapping("/manager/work-plan/")
+public class ManagerWorkPlanController extends AbstractController<Manager, WorkPlan> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected ManagerTaskListService	listService;
+	protected ManagerWorkPlanListService	listService;
 	
 	@Autowired
-	protected ManagerTaskShowService	showService;
+	protected ManagerWorkPlanShowService	showService;
 	
 	@Autowired
-	protected ManagerTaskCreateService 	createService;
+	protected ManagerWorkPlanCreateService 	createService;
 	
 	@Autowired
-	protected ManagerTaskUpdateService 	updateService;
+	protected ManagerWorkPlanUpdateService 	updateService;
 	
 	@Autowired
-	protected ManagerTaskDeleteService 	deleteService;
-	
-	@Autowired
-	protected ManagerTaskByWorkPlanListService	listByWorkPlanService;
-	
-	@Autowired
-	protected ManagerTaskAvailableListService	listAvailableService;
+	protected ManagerWorkPlanDeleteService 	deleteService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -60,8 +53,6 @@ public class ManagerTaskController extends AbstractController<Manager, Task> {
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
-		super.addCustomCommand(CustomCommand.LIST_BY, BasicCommand.LIST, this.listByWorkPlanService);
-		super.addCustomCommand(CustomCommand.LIST_AVAILABLE, BasicCommand.LIST, this.listAvailableService);
 	}
 
 }
