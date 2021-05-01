@@ -16,6 +16,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form readonly="true">
+	<acme:form-textbox code="anonymous.workplan.form.label.title" path="title"/>
 	<acme:form-moment code="anonymous.workplan.form.label.startExecutionPeriod" path="startExecutionPeriod"/>
 	<acme:form-moment code="anonymous.workplan.form.label.endExecutionPeriod" path="endExecutionPeriod"/>
 	<acme:form-double code="anonymous.workplan.form.label.totalWorkload" path="totalWorkload"/>

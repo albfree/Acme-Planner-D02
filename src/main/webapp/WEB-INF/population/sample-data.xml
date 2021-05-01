@@ -185,6 +185,20 @@
 		<property name="manager" ref="manager01Manager"></property>
 	</bean>
 	
+	<bean id="workPlan04" class="acme.entities.workplans.WorkPlan">
+	<property name="title" value="Work plan 04"/>
+		<property name="startExecutionPeriod" value="2021/01/01 15:00"/>
+		<property name="endExecutionPeriod" value="2021/09/11 15:00"/>
+		<property name="share" value="PUBLIC"/>
+		<property name="tasks">
+			<list>
+				<ref bean="task01" />
+				<ref bean="task05" />
+			</list>
+		</property>
+		<property name="manager" ref="manager01Manager"></property>
+	</bean>
+	
 	<!-- Managers -->
 	
 	<bean name="manager01UserAccount" class="acme.framework.entities.UserAccount">
