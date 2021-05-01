@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
+import acme.entities.tasks.Task;
 import acme.entities.tasks.TaskShare;
 import acme.entities.workplans.WorkPlan;
 import acme.entities.workplans.WorkPlanShare;
@@ -63,7 +64,7 @@ public class ManagerWorkPlanUpdateService implements AbstractUpdateService<Manag
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "startExecutionPeriod", "endExecutionPeriod", "share", "totalWorkload");
+		request.unbind(entity, model, "title", "startExecutionPeriod", "endExecutionPeriod", "share", "totalWorkload");
 	}
 	
 	@Override
@@ -101,6 +102,47 @@ public class ManagerWorkPlanUpdateService implements AbstractUpdateService<Manag
 			
 			errors.state(request, entity.getTasks().stream().noneMatch(task -> task.getEndExecutionPeriod().after(entity.getEndExecutionPeriod())),
 				"endExecutionPeriod", "manager.work-plan.form.error.period-tasks-invalid");
+		}
+		
+		try {
+			final Integer idTaskToAdd = request.getModel().getInteger("addTaskId");
+			
+			if (idTaskToAdd != null) {
+				final Task taskToAdd = this.repository.findTaskById(idTaskToAdd);
+
+				if (entity.getTasks().contains(taskToAdd)) {
+					errors.state(request, false, "addTaskId", "manager.work-plan.form.error.task.contains.invalid");
+				} else if (taskToAdd.getShare().equals(TaskShare.PRIVATE) && entity.getShare().equals(WorkPlanShare.PUBLIC)) {
+					errors.state(request, false, "addTaskId", "manager.work-plan.form.error.task.private.invalid");
+				} else if (taskToAdd.getStartExecutionPeriod().before(entity.getStartExecutionPeriod())
+					|| taskToAdd.getEndExecutionPeriod().after(entity.getEndExecutionPeriod())) {
+					errors.state(request, false, "addTaskId", "manager.work-plan.form.error.task.period.invalid");
+				} else {
+					entity.getTasks().add(taskToAdd);
+				}
+			}
+			
+		} catch (final Exception e) {
+			errors.state(request, false, 
+				"addTaskId", "manager.work-plan.form.error.task.id.invalid");
+		}
+		
+		try {
+			final Integer idTaskToDelete = request.getModel().getInteger("deleteTaskId");
+			
+			if (idTaskToDelete != null) {
+				final Task taskToDelete = this.repository.findTaskById(idTaskToDelete);
+
+				if (!entity.getTasks().contains(taskToDelete)) {
+					errors.state(request, false, "deleteTaskId", "manager.work-plan.form.error.task.not.contains.invalid");
+				} else {
+					entity.getTasks().remove(taskToDelete);
+				}
+			}
+			
+		} catch (final Exception e) {
+			errors.state(request, false, 
+				"deleteTaskId", "manager.work-plan.form.error.task.id.invalid");
 		}
 	}
 	

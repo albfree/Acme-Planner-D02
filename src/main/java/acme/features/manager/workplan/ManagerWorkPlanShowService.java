@@ -55,9 +55,9 @@ public class ManagerWorkPlanShowService implements AbstractShowService<Manager, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "startExecutionPeriod", "endExecutionPeriod", "share", "totalWorkload");
+		request.unbind(entity, model, "title", "startExecutionPeriod", "endExecutionPeriod", "share", "totalWorkload");
 		
-		model.setAttribute("wpID", entity.getId()); 
+		model.setAttribute("wpID", entity.getId());
 		
 		model.setAttribute("hasTasks", !entity.getTasks().isEmpty());
 		

@@ -145,6 +145,7 @@
 	<!-- WorkPlans -->
 	
 	<bean id="workPlan01" class="acme.entities.workplans.WorkPlan">
+	<property name="title" value="Work plan 01"/>
 		<property name="startExecutionPeriod" value="2021/01/01 15:00"/>
 		<property name="endExecutionPeriod" value="2021/04/10 15:00"/>
 		<property name="share" value="PUBLIC"/>
@@ -158,6 +159,7 @@
 	</bean>
 	
 	<bean id="workPlan02" class="acme.entities.workplans.WorkPlan">
+	<property name="title" value="Work plan 02"/>
 		<property name="startExecutionPeriod" value="2021/06/16 10:00"/>
 		<property name="endExecutionPeriod" value="2021/09/25 15:00"/>
 		<property name="share" value="PRIVATE"/>
@@ -172,6 +174,7 @@
 	</bean>
 	
 	<bean id="workPlan03" class="acme.entities.workplans.WorkPlan">
+	<property name="title" value="Work plan 03"/>
 		<property name="startExecutionPeriod" value="2021/03/16 13:00"/>
 		<property name="endExecutionPeriod" value="2021/06/25 16:00"/>
 		<property name="share" value="PRIVATE"/>

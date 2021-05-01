@@ -23,6 +23,8 @@
 	<acme:menu-separator/>
 	</jstl:if>
 	
+	<acme:form-textbox code="manager.work-plan.form.label.title" path="title"/>
+	
 	<acme:form-moment code="manager.work-plan.form.label.startExecutionPeriod" path="startExecutionPeriod"/>
 	<acme:form-moment code="manager.work-plan.form.label.endExecutionPeriod" path="endExecutionPeriod"/>
 	
@@ -35,20 +37,28 @@
 	<acme:form-double readonly="true" code="manager.work-plan.form.label.total-workload" path="totalWorkload"/>
 	</jstl:if>
 	
-	<acme:form-submit test="${command != 'create'}" method="get" code="manager.work-plan.form.button.task.list" 
+	<jstl:if test="${command != 'create'}">
+	<acme:form-integer code="manager.work-plan.form.label.task.add" path="addTaskId"/>
+	</jstl:if>
+	
+	<jstl:if test="${command != 'create'}">
+	<acme:form-integer code="manager.work-plan.form.label.task.delete" path="deleteTaskId"/>
+	</jstl:if>
+	
+	<acme:form-submit test="${command == 'show'}" method="get" code="manager.work-plan.form.button.task.list" 
 		action="/manager/task/list_by?id=${wpID}"/>
 		
-	<acme:form-submit test="${command != 'create'}" method="get" code="manager.work-plan.form.button.task.add" 
+	<acme:form-submit test="${command == 'show'}" method="get" code="manager.work-plan.form.button.task.add" 
 		action="/manager/task/list_available?id=${wpID}"/>
 	
 	<acme:menu-separator/>
 	
 	<acme:form-submit test="${command == 'create'}" code="manager.work-plan.form.button.create" 
-		action="create"/>
+		action="/manager/work-plan/create"/>
 	<acme:form-submit test="${command != 'create'}" code="manager.work-plan.form.button.update" 
-		action="update"/>
+		action="/manager/work-plan/update"/>
 	<acme:form-submit test="${command != 'create'}" code="manager.work-plan.form.button.delete" 
-		action="delete"/>
+		action="/manager/work-plan/delete"/>
 		
 	<acme:form-return code="manager.work-plan.form.button.return"/>
 	

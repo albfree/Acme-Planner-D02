@@ -16,7 +16,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="manager.work-plan.list.label.startExecutionPeriod" path="startExecutionPeriod" width="40%"/>
-	<acme:list-column code="manager.work-plan.list.label.endExecutionPeriod" path="endExecutionPeriod" width="40%"/>
+	<acme:list-column code="manager.work-plan.list.label.title" path="title" width="40%"/>
+	<acme:list-column code="manager.work-plan.list.label.startExecutionPeriod" path="startExecutionPeriod" width="20%"/>
+	<acme:list-column code="manager.work-plan.list.label.endExecutionPeriod" path="endExecutionPeriod" width="20%"/>
 	<acme:list-column code="manager.work-plan.list.label.share" path="share" width="20%"/>
 </acme:list>

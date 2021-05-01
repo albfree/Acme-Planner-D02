@@ -40,9 +40,7 @@ public interface ManagerTaskRepository extends AbstractRepository {
 	@Query("select wp.tasks from WorkPlan wp where wp.id = ?1")
 	Collection<Task> findTasksByWorkPlanId(int id);
 	
-	// Tareas asignables al workplan actual y si el workplan es publico no traerse tareas privadas
-	
-	@Query("select wp.tasks from WorkPlan wp where wp.id <> ?1")
-	Collection<Task> findAvailableTasksByWorkPlanId(int id);
+	@Query("select t from Task t")
+	Collection<Task> findAllTasks();
 
 }

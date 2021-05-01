@@ -494,11 +494,12 @@ Managed by ^</panel_attributes>
       <x>245</x>
       <y>567</y>
       <w>343</w>
-      <h>84</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 WorkPlan
 --
++ title: String {NotBlank, Length(min = 1, max = 80)}
 + startExecutionPeriod: Date {NotNull, Temporal(TIMESTAMP)}
 + endExecutionPeriod: Date {NotNull, Temporal(TIMESTAMP)}
 + share: WorkPlanShare {NotNull}

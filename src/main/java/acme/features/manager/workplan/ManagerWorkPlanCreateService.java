@@ -50,7 +50,7 @@ public class ManagerWorkPlanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "startExecutionPeriod", "endExecutionPeriod", "share");
+		request.unbind(entity, model, "title", "startExecutionPeriod", "endExecutionPeriod", "share");
 	}
 	
 	@Override
