@@ -18,6 +18,8 @@ This is Acme Planner, the second project of Group 11 for Design & Testing 2 subj
 GitHub repository: https://github.com/albgueram/Acme-Planner-D02
 GitHub release: 
 
+Credenciales de CleverCloud: 
+
 
 Interpretaciones:
 

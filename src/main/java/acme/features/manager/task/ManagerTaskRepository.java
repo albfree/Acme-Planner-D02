@@ -42,5 +42,11 @@ public interface ManagerTaskRepository extends AbstractRepository {
 	
 	@Query("select t from Task t")
 	Collection<Task> findAllTasks();
+	
+	@Query("select wp from WorkPlan wp")
+	Collection<WorkPlan> findAllWorkPlans();
+	
+	@Query("select wp from WorkPlan wp where wp.share = acme.entities.workplans.WorkPlanShare.PUBLIC")
+	Collection<WorkPlan> findAllPublicWorkPlans();
 
 }

@@ -32,3 +32,5 @@ manager.task.form.error.start-period-future = El inicio del Periodo de Ejecució
 manager.task.form.error.end-period-future = El final del Periodo de Ejecución debe estar en el futuro
 manager.task.form.error.period-invalid = El final del Periodo de Ejecución debe ser posterior al inicio
 manager.task.form.error.contains-spam = Esta cadena de texto contiene un porcentaje alto de palabras spam
+manager.task.form.error.task.in.workplan = Para eliminar una tarea debes desvincularla de los planes de trabajo a los que pertenece
+manager.task.form.error.task.in.public.workplan = No se puede establecer como privada una tarea que pertenece a un plan de trabajo público
