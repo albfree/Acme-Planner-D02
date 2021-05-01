@@ -1,6 +1,8 @@
 package acme.utils;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class StandardDeviation {
 
@@ -8,8 +10,11 @@ public class StandardDeviation {
 	    throw new IllegalStateException("Utility class");
 	  }
 
-    public static double calculateSD(final List<Double> values)
+    public static double calculateSD(List<Double> values)
     {
+    	
+    	values = values.stream().filter(Objects::nonNull).collect(Collectors.toList());
+    	
         double sum = 0.0, standardDeviation = 0.0;
         final int length = values.size();
 
