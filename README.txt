@@ -15,23 +15,36 @@ projects.
 
 This is Acme Planner, the second project of Group 11 for Design & Testing 2 subject.
 
-GitHub repository: https://github.com/albgueram/Acme-Planner-D02
-GitHub release: 
+# GitHub repository: https://github.com/albgueram/Acme-Planner-D02
+# GitHub release: 
 
-Credenciales de CleverCloud: 
+# Credenciales de CleverCloud: 
 
+# Interpretaciones y consideraciones:
 
-Interpretaciones:
-
-- Para la entidad Task se pide 500 caracteres como máximo en el atributo 'description', pero el framework 
-no da la posibilidad a aumentar un campo de texto a 500 caracteres, por tanto, se limita al máximo posible
-que son 255.
+- Se ruega, por favor, no realizar pruebas con horas muy cercanas (entorno a menos de dos horas) puesto que 
+JPQL tiene en cuenta la hora de base de datos sin sumar las 2 horas de menos con las que se guarda una entidad.
+En cambio, en Java sí se tiene en cuenta la hora original y puede provocar incongruencias con respecto a los
+requisitos.
 
 - Al no concretarse en los requisitos lo contrario, se interpreta que no es necesario incluir @Past para
-el atributo 'moment' de la entidad Shout. Al realizarse la creación de un Shout, siempre
-estará en pasado porque así se ha implementado en el servicio correspondiente. La decisión de no incluir 
-@Past se toma para poder introducir ejemplos de la entidad Shout con fecha de creación posterior a la del entregable, 
-de forma que se simplifica la corrección al profesor al listar Shouts.
+el atributo 'moment' de la entidad Shout. Al realizarse la creación de un Shout, siempre estará en
+pasado porque así se ha implementado en el servicio correspondiente. La decisión de no incluir 
+@Past se toma para poder introducir ejemplos de la entidad Shout con fecha de creación posterior 
+a la del entregable, de forma que se simplifica la corrección al profesor al listar Shouts.
+
+- En atributos de texto para los que no se pide un máximo de longitud como, por ejemplo, el link opcional
+en un Shout, se limitan a 255 caracteres porque más resulta en un error al guardar en base de datos.
+
+- Para la entidad Task se pide 500 caracteres como máximo en el atributo 'description', pero el framework 
+no da la posibilidad a aumentar un campo de texto a 500 caracteres en base de datos, por tanto, se limita 
+al máximo posible que son 255.
+
+- Se interpreta como Task finalizada aquella cuyo final de periodo de ejecución es anterior al momento actual.
+
+- Se pide como requisito que una Task al ser creada debe tener el periodo de ejecución en el futuro. Se interpreta
+que al actualizarla no hace falta realizar dicha comprobación puesto que para una actualización de título, por ejemplo,
+obligaría a cambiar las fechas del periodo de ejecución.
 
 - Dado que en el nivel C se especifica que un usuario Anonymous no puede listar ni mostrar aquellas tareas que sean
 privadas y/o haya terminado su periodo de ejecución, interpretaremos lo mismo a la hora de listar y mostrar las

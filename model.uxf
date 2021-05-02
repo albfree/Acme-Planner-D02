@@ -310,7 +310,7 @@ Shout
 --
 + moment: Date {NotNull, Temporal(TIMESTAMP)}
 + author: String {NotBlank, Length(min = 5, max = 25)}
-+ text: String{NotBlank, Length(min = 1, max = 100)}
++ text: String {NotBlank, Length(min = 1, max = 100)}
 + info: String {URL, Length(max = 255)}
 </panel_attributes>
     <additional_attributes/>
@@ -357,7 +357,7 @@ Task
 + description: String {NotBlank, Length(min = 1, max = 255)}
 + share: TaskShare {NotNull}
 + link: String {URL, Length(max = 255)}
-+ /maxWorkload: Double {Transient}</panel_attributes>
++ / maxWorkload: Double {Transient}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -515,7 +515,7 @@ WorkPlan
 + startExecutionPeriod: Date {NotNull, Temporal(TIMESTAMP)}
 + endExecutionPeriod: Date {NotNull, Temporal(TIMESTAMP)}
 + share: WorkPlanShare {NotNull}
-+ /totalWorkload: Double {Transient}</panel_attributes>
++ / totalWorkload: Double {Transient}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -597,7 +597,7 @@ bg=orange</panel_attributes>
       <x>1001</x>
       <y>714</y>
       <w>133</w>
-      <h>70</h>
+      <h>63</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Module&gt;&gt;
 SpamChecker
@@ -610,7 +610,7 @@ bg=red</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1127</x>
-      <y>742</y>
+      <y>735</y>
       <w>63</w>
       <h>21</h>
     </coordinates>
@@ -621,7 +621,7 @@ bg=red</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>1176</x>
-      <y>728</y>
+      <y>721</y>
       <w>154</w>
       <h>49</h>
     </coordinates>

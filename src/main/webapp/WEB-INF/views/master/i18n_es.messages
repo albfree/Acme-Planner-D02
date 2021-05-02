@@ -29,8 +29,8 @@ master.menu.sign-out = Salir
 
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
-master.menu.anonymous.list-shouts = Ver gritos
-master.menu.anonymous.create-shout = ¡Dar un grito!
+master.menu.anonymous.list-shouts = Lista de gritos
+master.menu.anonymous.create-shout = Crear grito
 master.menu.anonymous.list-tasks = Lista de tareas
 master.menu.anonymous.list-workplans = Lista de planes de trabajo
 
@@ -54,7 +54,7 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.manager = Gerente
 master.menu.manager.list-tasks = Lista de tareas
 master.menu.manager.create-task = Crear tarea
-master.menu.manager.list-work-plan = Listar planes de trabajo
+master.menu.manager.list-work-plan = Lista de planes de trabajo
 master.menu.manager.create-work-plan = Crear plan de trabajo
 
 # master.menu.provider ########################################################
