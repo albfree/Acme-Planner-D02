@@ -11,7 +11,7 @@
 manager.work-plan.form.label.title = Título:
 manager.work-plan.form.label.startExecutionPeriod = Inicio del periodo de ejecución:
 manager.work-plan.form.label.endExecutionPeriod = Final del periodo de ejecución:
-manager.work-plan.form.label.total-workload = Carga de total de trabajo:
+manager.work-plan.form.label.total-workload = Carga total de trabajo:
 manager.work-plan.form.label.share = Visibilidad:
 manager.work-plan.form.label.task.add = Id de la tarea a añadir:
 manager.work-plan.form.label.task.delete = Id de la tarea a eliminar:

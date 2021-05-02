@@ -23,6 +23,8 @@
 	<acme:menu-separator/>
 	</jstl:if>
 	
+	<acme:form-hidden path="wpID"/>
+	
 	<acme:form-textbox code="manager.work-plan.form.label.title" path="title"/>
 	
 	<acme:form-moment code="manager.work-plan.form.label.startExecutionPeriod" path="startExecutionPeriod"/>
@@ -45,10 +47,10 @@
 	<acme:form-integer code="manager.work-plan.form.label.task.delete" placeholder="90" path="deleteTaskId"/>
 	</jstl:if>
 	
-	<acme:form-submit test="${command == 'show'}" method="get" code="manager.work-plan.form.button.task.list" 
+	<acme:form-submit test="${command != 'create'}" method="get" code="manager.work-plan.form.button.task.list" 
 		action="/manager/task/list_by?id=${wpID}"/>
 		
-	<acme:form-submit test="${command == 'show'}" method="get" code="manager.work-plan.form.button.task.add" 
+	<acme:form-submit test="${command != 'create'}" method="get" code="manager.work-plan.form.button.task.add" 
 		action="/manager/task/list_available?id=${wpID}"/>
 	
 	<acme:menu-separator/>
