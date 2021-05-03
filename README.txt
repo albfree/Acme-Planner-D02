@@ -16,9 +16,10 @@ projects.
 This is Acme Planner, the second project of Group 11 for Design & Testing 2 subject.
 
 # GitHub repository: https://github.com/albgueram/Acme-Planner-D02
-# GitHub release: 
+# GitHub release: se añade en el README.txt del proyecto entregado en la enseñanza virtual.
 
-# Credenciales de CleverCloud: 
+# Credenciales de CleverCloud: las credenciales se aportan en el README.txt del proyecto entregado en la 
+enseñanza virtual.
 
 # Interpretaciones y consideraciones:
 
