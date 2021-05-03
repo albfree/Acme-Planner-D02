@@ -22,6 +22,9 @@ This is Acme Planner, the second project of Group 11 for Design & Testing 2 subj
 
 # Interpretaciones y consideraciones:
 
+- La funcionalidad de hacerse manager no está implementada porque no se pide como requisito. Para solventar
+este problema, se añade al initial-data.xml un manager con las siguientes credenciales: manager / manager
+
 - Se ruega, por favor, no realizar pruebas con horas muy cercanas (entorno a menos de dos horas) puesto que 
 JPQL tiene en cuenta la hora de base de datos sin sumar las 2 horas de menos con las que se guarda una entidad.
 En cambio, en Java sí se tiene en cuenta la hora original y puede provocar incongruencias con respecto a los
