@@ -18,9 +18,14 @@ This is Acme Planner, the second project of Group 11 for Design & Testing 2 subj
 # GitHub repository: https://github.com/albgueram/Acme-Planner-D02
 # GitHub release: https://github.com/albgueram/Acme-Planner-D02/releases/tag/v1.2
 
-# Credenciales de CleverCloud: como el repositorio es público, por seguridad no se incluyen aquí las
-credenciales. En su lugar, se dejarán indicadas en un README.txt junto al zip de la entrega en la enseñanza
+# Credenciales de Clever Cloud: como el repositorio es público, por seguridad no se incluyen aquí las
+credenciales. En su lugar, se dejarán indicadas en un README.txt en el zip de la entrega de la enseñanza
 virtual.
+
+# Apunte sobre Clever Cloud: debido a un error que se desconocía, en la aplicación desplegada las
+URLs que contienen /manager provocan errores. Para solucionarlo, se modifica el campo 'context' del war.json
+y para probar la aplicación desplegada habrá que añadir a la URL que proporciona Clever Cloud
+lo siguiente: /Acme-Planner
 
 # Interpretaciones y consideraciones:
 
